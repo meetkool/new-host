@@ -31,7 +31,7 @@ const StudentAnalytics = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <BarChart className="w-8 h-8 text-blue-600" />
+              <BarChart className="w-8 h-8 text-[#0b3259]" />
               <h1 className="text-2xl font-bold">Performance Analytics</h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -53,7 +53,7 @@ const StudentAnalytics = () => {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Target className="w-5 h-5 mr-2 text-blue-600" />
+              <Target className="w-5 h-5 mr-2 text-[#0b3259]" />
               Subject-wise Performance
             </CardTitle>
           </CardHeader>
@@ -65,12 +65,12 @@ const StudentAnalytics = () => {
                     <h3 className="font-semibold text-gray-900">{subject.subject}</h3>
                     <div className="flex items-center space-x-4 text-sm">
                       <span className="text-gray-600">Average: {subject.score}%</span>
-                      <span className="text-green-600 font-medium">{subject.trend}</span>
+                      <span className="text-[#19a951] font-medium">{subject.trend}</span>
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
                     <div 
-                      className="bg-blue-600 h-3 rounded-full transition-all" 
+                      className="bg-[#0b3259] h-3 rounded-full transition-all" 
                       style={{ width: `${subject.score}%` }}
                     ></div>
                   </div>
@@ -85,17 +85,17 @@ const StudentAnalytics = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <TrendingUp className="w-5 h-5 mr-2 text-orange-600" />
+                <TrendingUp className="w-5 h-5 mr-2 text-[#19a951]" />
                 Topics to Improve
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 {weakTopics.map((topic, index) => (
-                  <div key={index} className="p-4 bg-orange-50 rounded-lg">
+                  <div key={index} className="p-4 bg-[#19a951]/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-gray-900">{topic.topic}</h4>
-                      <span className="text-orange-600 font-bold">{topic.score}%</span>
+                      <span className="text-[#19a951] font-bold">{topic.score}%</span>
                     </div>
                     <div className="text-sm text-gray-600">{topic.subject}</div>
                   </div>
@@ -108,17 +108,17 @@ const StudentAnalytics = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Award className="w-5 h-5 mr-2 text-green-600" />
+                <Award className="w-5 h-5 mr-2 text-[#19a951]" />
                 Strong Topics
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 {strongTopics.map((topic, index) => (
-                  <div key={index} className="p-4 bg-green-50 rounded-lg">
+                  <div key={index} className="p-4 bg-[#19a951]/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-gray-900">{topic.topic}</h4>
-                      <span className="text-green-600 font-bold">{topic.score}%</span>
+                      <span className="text-[#19a951] font-bold">{topic.score}%</span>
                     </div>
                     <div className="text-sm text-gray-600">{topic.subject}</div>
                   </div>

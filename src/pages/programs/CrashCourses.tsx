@@ -98,46 +98,46 @@ const CrashCourses = () => {
 
   const benefits = [
     {
-      icon: <Zap className="w-8 h-8 text-orange-600" />,
+      icon: <Zap className="w-8 h-8 text-[#19a951]" />,
       title: 'Rapid Learning',
       description: 'Cover entire syllabus in record time with focused teaching'
     },
     {
-      icon: <Target className="w-8 h-8 text-blue-600" />,
+      icon: <Target className="w-8 h-8 text-[#0b3259]" />,
       title: 'Focused Approach',
       description: 'Emphasis on high-yield topics and exam-oriented preparation'
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-green-600" />,
+      icon: <TrendingUp className="w-8 h-8 text-[#19a951]" />,
       title: 'Score Improvement',
       description: 'Strategic preparation for maximum score in minimum time'
     },
     {
-      icon: <Rocket className="w-8 h-8 text-purple-600" />,
+      icon: <Rocket className="w-8 h-8 text-[#0b3259]" />,
       title: 'Intensive Practice',
       description: 'Daily problem-solving and extensive mock test series'
     }
   ];
 
   const intensityLevels = {
-    'High': 'border-yellow-400 bg-yellow-50 text-yellow-700',
-    'Very High': 'border-red-400 bg-red-50 text-red-700'
+    'High': 'border-[#19a951] bg-[#19a951]/5 text-[#19a951]',
+    'Very High': 'border-[#0b3259] bg-[#0b3259]/5 text-[#0b3259]'
   };
 
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-16">
+      <section className="bg-gradient-to-br from-[#19a951] to-[#19a951] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-4 bg-white text-orange-600 hover:bg-gray-100">
+            <Badge className="mb-4 bg-white text-[#19a951] hover:bg-gray-100">
               <Zap className="w-4 h-4 mr-1" />
               Intensive Fast-Track Preparation
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Crash Courses
             </h1>
-            <p className="text-xl text-orange-100 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Intensive revision and practice programs designed for last-minute preparation and score maximization
             </p>
           </div>
@@ -145,13 +145,13 @@ const CrashCourses = () => {
       </section>
 
       {/* Important Notice */}
-      <section className="py-8 bg-yellow-50 border-b border-yellow-200">
+      <section className="py-8 bg-[#19a951]/5 border-b border-[#19a951]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start space-x-4">
-            <AlertCircle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
+            <AlertCircle className="w-6 h-6 text-[#19a951] flex-shrink-0 mt-1" />
             <div>
-              <h3 className="font-semibold text-yellow-900 mb-2">Who Should Join Crash Courses?</h3>
-              <p className="text-yellow-800">
+              <h3 className="font-semibold text-[#19a951] mb-2">Who Should Join Crash Courses?</h3>
+              <p className="text-[#19a951]">
                 Crash courses are ideal for students who have already completed the JEE syllabus and need 
                 intensive revision, practice, and exam strategy. Not recommended for students who haven't 
                 covered the basics. Consider our regular programs if you need comprehensive teaching.
@@ -167,7 +167,7 @@ const CrashCourses = () => {
           <div className="space-y-8">
             {programs.map((program) => (
               <Card key={program.id} className="hover:shadow-2xl transition-shadow">
-                <CardHeader className="bg-gradient-to-r from-orange-50 to-white">
+                <CardHeader className="bg-gradient-to-r from-[#19a951]/5 to-white">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
                     <Badge 
                       className={`border-2 ${intensityLevels[program.intensity as keyof typeof intensityLevels]}`}
@@ -176,7 +176,7 @@ const CrashCourses = () => {
                       <Zap className="w-3 h-3 mr-1" />
                       {program.intensity} Intensity
                     </Badge>
-                    <Badge variant="secondary" className="bg-blue-100 text-blue-700">
+                    <Badge variant="secondary" className="bg-[#0b3259]/10 text-[#0b3259]">
                       Starts: {program.startDate}
                     </Badge>
                   </div>
@@ -188,7 +188,7 @@ const CrashCourses = () => {
                     {/* Left Column */}
                     <div>
                       <h3 className="font-semibold text-lg mb-4 flex items-center">
-                        <BookOpen className="w-5 h-5 mr-2 text-orange-600" />
+                        <BookOpen className="w-5 h-5 mr-2 text-[#19a951]" />
                         Program Details
                       </h3>
                       <div className="space-y-3 mb-6">
@@ -215,21 +215,21 @@ const CrashCourses = () => {
                         </div>
                       </div>
                       
-                      <div className="p-4 bg-orange-50 rounded-lg border border-orange-200 mb-6">
-                        <div className="text-2xl font-bold text-orange-700">{program.price}</div>
-                        <div className="text-sm text-orange-600">Complete course fee</div>
+                      <div className="p-4 bg-[#19a951]/5 rounded-lg border border-[#19a951]/20 mb-6">
+                        <div className="text-2xl font-bold text-[#19a951]">{program.price}</div>
+                        <div className="text-sm text-[#19a951]">Complete course fee</div>
                       </div>
 
                       {/* Recommended For */}
                       <div>
                         <h4 className="font-semibold mb-3 flex items-center text-sm">
-                          <Users className="w-4 h-4 mr-2 text-orange-600" />
+                          <Users className="w-4 h-4 mr-2 text-[#19a951]" />
                           Recommended For
                         </h4>
                         <div className="space-y-2">
                           {program.recommended.map((rec, index) => (
                             <div key={index} className="flex items-start space-x-2">
-                              <CheckCircle2 className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                              <CheckCircle2 className="w-4 h-4 text-[#19a951]/50 mt-0.5 flex-shrink-0" />
                               <span className="text-sm text-gray-700">{rec}</span>
                             </div>
                           ))}
@@ -240,13 +240,13 @@ const CrashCourses = () => {
                     {/* Right Column */}
                     <div>
                       <h3 className="font-semibold text-lg mb-4 flex items-center">
-                        <CheckCircle2 className="w-5 h-5 mr-2 text-green-600" />
+                        <CheckCircle2 className="w-5 h-5 mr-2 text-[#19a951]" />
                         What's Included
                       </h3>
                       <div className="space-y-2">
                         {program.features.map((feature, index) => (
                           <div key={index} className="flex items-start space-x-3">
-                            <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-5 h-5 bg-[#19a951]/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                               </svg>
@@ -262,7 +262,7 @@ const CrashCourses = () => {
                   <div className="flex flex-col sm:flex-row gap-4 mt-8">
                     <Button 
                       size="lg"
-                      className="bg-orange-600 hover:bg-orange-700 text-white flex-1"
+                      className="bg-[#19a951] hover:bg-[#19a951] text-white flex-1"
                       onClick={() => navigate('/scholarship-test')}
                     >
                       Enroll Now
@@ -270,7 +270,7 @@ const CrashCourses = () => {
                     <Button 
                       size="lg"
                       variant="outline"
-                      className="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 flex-1"
+                      className="border-2 border-[#19a951] text-[#19a951] hover:bg-[#19a951]/5 flex-1"
                       onClick={() => window.location.href = 'tel:+919205321167'}
                     >
                       Get Details
@@ -310,29 +310,29 @@ const CrashCourses = () => {
       </section>
 
       {/* Study Schedule Example */}
-      <section className="py-16 bg-gradient-to-br from-orange-50 to-white">
+      <section className="py-16 bg-gradient-to-br from-[#19a951]/5 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8">Typical Daily Schedule</h2>
           <Card>
             <CardContent className="pt-6">
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-[#19a951]/5 rounded-lg">
                   <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-orange-600" />
+                    <Clock className="w-5 h-5 text-[#19a951]" />
                     <span className="font-medium">Morning Session</span>
                   </div>
                   <span className="text-sm text-gray-600">9:00 AM - 12:00 PM | Theory & Concepts</span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-[#0b3259]/5 rounded-lg">
                   <div className="flex items-center space-x-3">
-                    <FileText className="w-5 h-5 text-blue-600" />
+                    <FileText className="w-5 h-5 text-[#0b3259]" />
                     <span className="font-medium">Afternoon Session</span>
                   </div>
                   <span className="text-sm text-gray-600">1:00 PM - 4:00 PM | Problem Solving</span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-[#19a951]/5 rounded-lg">
                   <div className="flex items-center space-x-3">
-                    <Award className="w-5 h-5 text-green-600" />
+                    <Award className="w-5 h-5 text-[#19a951]" />
                     <span className="font-medium">Evening Session</span>
                   </div>
                   <span className="text-sm text-gray-600">5:00 PM - 8:00 PM | Tests & Doubt Clearing</span>
@@ -344,18 +344,18 @@ const CrashCourses = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-orange-800 text-white">
+      <section className="py-16 bg-gradient-to-r from-[#19a951] to-[#19a951] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready for Intensive Preparation?
           </h2>
-          <p className="text-xl text-orange-100 mb-8">
+          <p className="text-xl text-white/80 mb-8">
             Limited seats available - Enroll now to secure your spot
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-white text-orange-600 hover:bg-gray-100 text-lg px-8"
+              className="bg-white text-[#19a951] hover:bg-gray-100 text-lg px-8"
               onClick={() => navigate('/scholarship-test')}
             >
               Enroll for Crash Course
@@ -363,7 +363,7 @@ const CrashCourses = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 text-lg px-8"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#19a951] text-lg px-8"
               onClick={() => window.location.href = 'tel:+919205321167'}
             >
               Talk to Counselor

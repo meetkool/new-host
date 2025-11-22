@@ -19,10 +19,10 @@ const StudentDashboard = () => {
   const navigate = useNavigate();
 
   const stats = [
-    { icon: <FileText className="w-6 h-6" />, label: 'Tests Attempted', value: '45', color: 'bg-blue-50 text-blue-600' },
-    { icon: <Trophy className="w-6 h-6" />, label: 'Current Rank', value: '1,234', color: 'bg-green-50 text-green-600' },
-    { icon: <Target className="w-6 h-6" />, label: 'Accuracy', value: '78%', color: 'bg-purple-50 text-purple-600' },
-    { icon: <TrendingUp className="w-6 h-6" />, label: 'Improvement', value: '+12%', color: 'bg-orange-50 text-orange-600' }
+    { icon: <FileText className="w-6 h-6" />, label: 'Tests Attempted', value: '45', color: 'bg-[#0b3259]/5 text-[#0b3259]' },
+    { icon: <Trophy className="w-6 h-6" />, label: 'Current Rank', value: '1,234', color: 'bg-[#19a951]/5 text-[#19a951]' },
+    { icon: <Target className="w-6 h-6" />, label: 'Accuracy', value: '78%', color: 'bg-[#0b3259]/5 text-[#0b3259]' },
+    { icon: <TrendingUp className="w-6 h-6" />, label: 'Improvement', value: '+12%', color: 'bg-[#19a951]/5 text-[#19a951]' }
   ];
 
   const upcomingTests = [
@@ -44,7 +44,7 @@ const StudentDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <BookOpen className="w-8 h-8 text-blue-600" />
+              <BookOpen className="w-8 h-8 text-[#0b3259]" />
               <div>
                 <h1 className="text-2xl font-bold">Student Portal</h1>
                 <p className="text-sm text-gray-600">Welcome back, Arjun!</p>
@@ -85,7 +85,7 @@ const StudentDashboard = () => {
         {/* Quick Actions */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
           <Button 
-            className="bg-blue-600 hover:bg-blue-700 h-auto py-4"
+            className="bg-[#0b3259] hover:bg-[#0b3259]/90 h-auto py-4"
             onClick={() => navigate('/student/tests')}
           >
             <FileText className="w-5 h-5 mr-2" />
@@ -114,7 +114,7 @@ const StudentDashboard = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Calendar className="w-5 h-5 mr-2 text-blue-600" />
+                <Calendar className="w-5 h-5 mr-2 text-[#0b3259]" />
                 Upcoming Tests
               </CardTitle>
             </CardHeader>
@@ -149,7 +149,7 @@ const StudentDashboard = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Trophy className="w-5 h-5 mr-2 text-green-600" />
+                <Trophy className="w-5 h-5 mr-2 text-[#19a951]" />
                 Recent Performance
               </CardTitle>
             </CardHeader>
@@ -160,15 +160,15 @@ const StudentDashboard = () => {
                     <div className="font-semibold text-gray-900 mb-3">{test.name}</div>
                     <div className="grid grid-cols-3 gap-4 text-center text-sm">
                       <div>
-                        <div className="text-lg font-bold text-blue-600">{test.score}</div>
+                        <div className="text-lg font-bold text-[#0b3259]">{test.score}</div>
                         <div className="text-gray-600">Score</div>
                       </div>
                       <div>
-                        <div className="text-lg font-bold text-green-600">{test.rank}</div>
+                        <div className="text-lg font-bold text-[#19a951]">{test.rank}</div>
                         <div className="text-gray-600">AIR</div>
                       </div>
                       <div>
-                        <div className="text-lg font-bold text-purple-600">{test.percentile}</div>
+                        <div className="text-lg font-bold text-[#0b3259]">{test.percentile}</div>
                         <div className="text-gray-600">%ile</div>
                       </div>
                     </div>

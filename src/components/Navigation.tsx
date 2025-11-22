@@ -114,24 +114,24 @@ const Navigation = () => {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       {megaMenuData.map((section, index) => (
                         <div key={index} className="space-y-4 border-r last:border-r-0 border-gray-100 pr-4">
-                          <Link 
+                    <Link
                             to={section.path}
-                            className="flex items-center justify-between text-[#113B55] font-bold text-sm tracking-wider hover:text-red-700 uppercase mb-4"
+                            className="flex items-center justify-between text-[#0b3259] font-bold text-sm tracking-wider hover:text-[#19a951] uppercase mb-4"
                             onClick={() => setIsProgramsOpen(false)}
-                          >
+                    >
                             {section.title}
                             <ChevronRight className="w-4 h-4" />
-                          </Link>
+                    </Link>
                           <ul className="space-y-3">
                             {section.items.map((item, idx) => (
                               <li key={idx}>
-                                <Link
+                  <Link
                                   to={`${section.path}?class=${item.replace(/\s+/g, '-').toLowerCase()}`}
-                                  className="text-gray-600 hover:text-[#113B55] text-sm font-medium transition-colors block py-1"
+                                  className="text-gray-600 hover:text-[#0b3259] text-sm font-medium transition-colors block py-1"
                                   onClick={() => setIsProgramsOpen(false)}
-                                >
+                  >
                                   {item}
-                                </Link>
+                  </Link>
                               </li>
                             ))}
                           </ul>
@@ -223,7 +223,7 @@ const Navigation = () => {
                 <div className="pl-4 space-y-4 border-l-2 border-gray-100 ml-1">
                   {megaMenuData.map((section, index) => (
                     <div key={index} className="space-y-2">
-                      <div className="text-[#113B55] font-bold text-xs uppercase">{section.title}</div>
+                      <div className="text-[#0b3259] font-bold text-xs uppercase">{section.title}</div>
                       <ul className="space-y-2">
                         {section.items.map((item, idx) => (
                           <li key={idx}>
@@ -233,7 +233,7 @@ const Navigation = () => {
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {item}
-                            </Link>
+              </Link>
                           </li>
                         ))}
                       </ul>
