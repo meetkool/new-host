@@ -31,7 +31,7 @@ const SuccessStories = () => {
               {/* Feature List */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -41,7 +41,7 @@ const SuccessStories = () => {
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -51,7 +51,7 @@ const SuccessStories = () => {
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -64,10 +64,10 @@ const SuccessStories = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col gap-3">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-semibold rounded-lg shadow-lg transition-all duration-200">
+                <Button className="bg-[#0b3259] hover:bg-[#0b3259]/90 text-white px-6 py-3 text-base font-semibold rounded-lg shadow-lg transition-all duration-200">
                   Read Stories
                 </Button>
-                <Button className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-all duration-200 border-2 border-blue-600">
+                <Button className="bg-white text-[#0b3259] hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-all duration-200 border-2 border-[#0b3259]">
                   Start Your Journey
                 </Button>
               </div>
@@ -87,7 +87,7 @@ const SuccessStories = () => {
                   {/* Feature List */}
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -97,7 +97,7 @@ const SuccessStories = () => {
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -107,7 +107,7 @@ const SuccessStories = () => {
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                      <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -120,10 +120,10 @@ const SuccessStories = () => {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl">
+                    <Button className="bg-[#0b3259] hover:bg-[#0b3259]/90 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl">
                       Read Stories
                     </Button>
-                    <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-200">
+                    <Button variant="outline" className="border-2 border-[#0b3259] text-[#0b3259] hover:bg-[#0b3259] hover:text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-200">
                       Start Your Journey
                     </Button>
                   </div>
@@ -318,7 +318,7 @@ const SuccessStories = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Award className="w-16 h-16 mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Write Your Success Story?</h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-white/80">
             Join thousands of professionals who have transformed their careers with L2H. 
             Your success story could be next!
           </p>

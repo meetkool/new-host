@@ -2,205 +2,223 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Footer from '@/components/Footer';
+import { useNavigate } from 'react-router-dom';
 import { 
   GraduationCap, 
   Award,
   BookOpen,
   Users,
   Star,
-  CheckCircle2
+  CheckCircle2,
+  ArrowRight
 } from 'lucide-react';
 
 const Faculty = () => {
+  const navigate = useNavigate();
   const faculty = [
     {
       name: 'Dr. Rajesh Kumar',
       subject: 'Physics',
-      qualification: 'IIT Delhi (Ph.D.), 15 years experience',
-      specialization: 'Mechanics, Electromagnetism',
-      achievements: ['500+ IIT selections', 'Author of 3 physics books', 'KVPY mentor'],
-      image: null
+      qualification: 'IIT Delhi (Ph.D.)',
+      experience: '15+ Years',
+      specialization: 'Mechanics & Electromagnetism',
+      achievements: ['500+ IIT Selections', 'Author of 3 Books'],
+      id: 'FAC001'
     },
     {
       name: 'Prof. Anjali Sharma',
       subject: 'Chemistry',
-      qualification: 'IIT Bombay (M.Tech), 12 years experience',
-      specialization: 'Organic Chemistry, Physical Chemistry',
-      achievements: ['400+ top rankers', 'Chemistry Olympiad coach', 'Research publications'],
-      image: null
+      qualification: 'IIT Bombay (M.Tech)',
+      experience: '12+ Years',
+      specialization: 'Organic & Physical Chemistry',
+      achievements: ['400+ Top Rankers', 'Olympiad Coach'],
+      id: 'FAC002'
     },
     {
       name: 'Mr. Vikram Singh',
       subject: 'Mathematics',
-      qualification: 'IIT Kanpur (B.Tech), 10 years experience',
-      specialization: 'Calculus, Algebra, Coordinate Geometry',
-      achievements: ['350+ IIT selections', 'IMO trainer', 'Problem-solving expert'],
-      image: null
+      qualification: 'IIT Kanpur (B.Tech)',
+      experience: '10+ Years',
+      specialization: 'Calculus & Algebra',
+      achievements: ['350+ IIT Selections', 'IMO Trainer'],
+      id: 'FAC003'
     },
     {
       name: 'Dr. Priya Menon',
       subject: 'Physics',
-      qualification: 'IIT Madras (Ph.D.), 14 years experience',
-      specialization: 'Modern Physics, Optics',
-      achievements: ['450+ successful students', 'NTSE mentor', 'Educational innovator'],
-      image: null
+      qualification: 'IIT Madras (Ph.D.)',
+      experience: '14+ Years',
+      specialization: 'Optics & Modern Physics',
+      achievements: ['NTSE Mentor', 'Innovation Award'],
+      id: 'FAC004'
     },
     {
       name: 'Prof. Amit Patel',
       subject: 'Chemistry',
-      qualification: 'IIT Kharagpur (M.Sc), 11 years experience',
-      specialization: 'Inorganic Chemistry, Thermodynamics',
-      achievements: ['380+ top rankers', 'Chemistry author', 'Research background'],
-      image: null
+      qualification: 'IIT Kharagpur (M.Sc)',
+      experience: '11+ Years',
+      specialization: 'Inorganic Chemistry',
+      achievements: ['Research Papers', 'Top Rated Faculty'],
+      id: 'FAC005'
     },
     {
       name: 'Mr. Deepak Verma',
       subject: 'Mathematics',
-      qualification: 'IIT Roorkee (B.Tech), 13 years experience',
-      specialization: 'Trigonometry, Probability, Statistics',
-      achievements: ['420+ IIT selections', 'Math Olympiad coach', 'Conceptual teaching expert'],
-      image: null
-    }
-  ];
-
-  const strengths = [
-    {
-      icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
-      title: 'IIT Alumni',
-      description: 'All faculty members are from premier institutes like IITs'
-    },
-    {
-      icon: <Award className="w-8 h-8 text-green-600" />,
-      title: 'Proven Track Record',
-      description: '10+ years average teaching experience with excellent results'
-    },
-    {
-      icon: <BookOpen className="w-8 h-8 text-purple-600" />,
-      title: 'Subject Experts',
-      description: 'Deep subject knowledge with research and publication experience'
-    },
-    {
-      icon: <Users className="w-8 h-8 text-orange-600" />,
-      title: 'Student-Friendly',
-      description: 'Approachable, patient, and dedicated to student success'
+      qualification: 'IIT Roorkee (B.Tech)',
+      experience: '13+ Years',
+      specialization: 'Trigonometry & Vectors',
+      achievements: ['Math Olympiad Coach', 'Best Teacher Award'],
+      id: 'FAC006'
     }
   ];
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-violet-600 to-violet-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Faculty</h1>
-          <p className="text-xl text-violet-100 max-w-3xl mx-auto">
-            Learn from the best minds - IIT alumni and experienced educators
-          </p>
+    <div className="min-h-screen pt-16 font-sans bg-gray-50">
+      {/* Red Header */}
+      <section className="bg-[#0b3259] text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-end">
+          <div>
+             <div className="flex items-center gap-2 mb-2">
+                <div className="h-1 w-10 bg-[#19a951]"></div>
+                <span className="text-[#19a951] font-bold uppercase tracking-widest text-sm">Academic Excellence</span>
+             </div>
+             <h1 className="text-4xl md:text-5xl font-extrabold">Our Faculty</h1>
+          </div>
+          <div className="hidden md:block">
+             <Users className="w-24 h-24 text-white/20" />
+          </div>
         </div>
       </section>
 
-      {/* Faculty Strengths */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Makes Our Faculty Special?
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {strengths.map((strength, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  {strength.icon}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{strength.title}</h3>
-                <p className="text-sm text-gray-600">{strength.description}</p>
+      {/* Stats Row */}
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4">
+           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
+              <div className="p-6 text-center">
+                 <div className="text-3xl font-black text-[#0b3259] mb-1">100%</div>
+                 <div className="text-sm font-bold text-gray-500 uppercase">IITian Faculty</div>
               </div>
-            ))}
-          </div>
+              <div className="p-6 text-center">
+                 <div className="text-3xl font-black text-[#0b3259] mb-1">15+</div>
+                 <div className="text-sm font-bold text-gray-500 uppercase">Avg Experience</div>
+              </div>
+              <div className="p-6 text-center">
+                 <div className="text-3xl font-black text-[#0b3259] mb-1">5000+</div>
+                 <div className="text-sm font-bold text-gray-500 uppercase">IIT Selections</div>
+              </div>
+              <div className="p-6 text-center">
+                 <div className="text-3xl font-black text-[#0b3259] mb-1">24/7</div>
+                 <div className="text-sm font-bold text-gray-500 uppercase">Doubt Support</div>
+              </div>
+           </div>
         </div>
       </section>
 
-      {/* Faculty List */}
-      <section className="py-16 bg-gray-50">
+      {/* Faculty Grid */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our Expert Faculty
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Mentors Who Shape Futures</h2>
+            <div className="w-20 h-1 bg-[#19a951] mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {faculty.map((teacher, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
-                <CardContent className="pt-8">
-                  <div className="bg-gradient-to-br from-violet-400 to-violet-600 w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <GraduationCap className="w-20 h-20 text-white" />
-                  </div>
-                  <div className="text-center mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{teacher.name}</h3>
-                    <Badge className="mb-3">{teacher.subject}</Badge>
-                    <p className="text-sm text-gray-600 mb-2">{teacher.qualification}</p>
-                    <p className="text-sm font-medium text-violet-600">{teacher.specialization}</p>
-                  </div>
-                  <div className="space-y-2 mt-4">
-                    {teacher.achievements.map((achievement, idx) => (
-                      <div key={idx} className="flex items-start space-x-2">
-                        <Star className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{achievement}</span>
+              <div key={index} className="bg-white shadow-md hover:shadow-2xl transition-all duration-300 group rounded-lg overflow-hidden border border-gray-100">
+                <div className="h-2 bg-[#0b3259]"></div>
+                <div className="p-6">
+                   <div className="flex justify-between items-start mb-6">
+                      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-[#19a951] transition-colors">
+                         <GraduationCap className="w-10 h-10 text-gray-400 group-hover:text-[#0b3259]" />
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Teaching Approach */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Faculty Teaching Approach
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              'Conceptual clarity with real-world examples',
-              'Interactive teaching with student participation',
-              'Regular doubt clearing sessions',
-              'Personalized attention to weak students',
-              'Continuous performance monitoring',
-              'Motivational counseling and guidance',
-              'Problem-solving techniques and shortcuts',
-              'Exam strategy and time management tips'
-            ].map((approach, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
-                <CheckCircle2 className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">{approach}</span>
+                      <Badge variant="outline" className="text-[#0b3259] border-[#0b3259] bg-blue-50">
+                         {teacher.subject}
+                      </Badge>
+                   </div>
+                   
+                   <h3 className="text-xl font-bold text-gray-900 mb-1">{teacher.name}</h3>
+                   <p className="text-sm text-gray-500 mb-4 font-medium">{teacher.qualification}</p>
+                   
+                   <div className="space-y-3 border-t border-gray-100 pt-4">
+                      <div className="flex items-center text-sm">
+                         <Star className="w-4 h-4 text-[#19a951] mr-2" />
+                         <span className="text-gray-700 font-semibold">Exp: {teacher.experience}</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                         <BookOpen className="w-4 h-4 text-[#19a951] mr-2" />
+                         <span className="text-gray-600">{teacher.specialization}</span>
+                      </div>
+                      <div className="flex items-start text-sm">
+                         <Award className="w-4 h-4 text-[#19a951] mr-2 mt-0.5" />
+                         <span className="text-gray-600 italic">{teacher.achievements[0]}</span>
+                      </div>
+                   </div>
+                </div>
+                <div className="bg-gray-50 px-6 py-3 border-t border-gray-100 flex justify-between items-center">
+                   <span className="text-xs font-mono text-gray-400">ID: {teacher.id}</span>
+                   <span className="text-[#0b3259] text-xs font-bold cursor-pointer hover:underline">VIEW PROFILE</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-violet-600 to-violet-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Learn from the Best
-          </h2>
-          <p className="text-xl text-violet-100 mb-8">
-            Join our programs and get taught by IIT alumni and expert educators
-          </p>
-          <Button 
-            size="lg"
-            className="bg-white text-violet-600 hover:bg-gray-100 text-lg px-8"
-          >
-            View Programs
-          </Button>
-        </div>
+      {/* Methodology Section - List Style */}
+      <section className="py-16 bg-white border-t border-gray-200">
+         <div className="max-w-5xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row gap-12">
+               <div className="md:w-1/2">
+                  <h3 className="text-2xl font-bold text-[#0b3259] mb-6 border-l-4 border-[#19a951] pl-4">
+                     Teaching Methodology
+                  </h3>
+                  <div className="space-y-4">
+                     {[
+                        'Concept Building from Basic to Advanced',
+                        'Daily Practice Problems (DPP) Discussion',
+                        'Previous Year Questions (PYQ) Analysis',
+                        'Personalized Doubt Clearing Sessions'
+                     ].map((item, i) => (
+                        <div key={i} className="flex items-center p-3 bg-gray-50 border-l-2 border-[#0b3259]">
+                           <CheckCircle2 className="w-5 h-5 text-[#0b3259] mr-3" />
+                           <span className="font-medium text-gray-800">{item}</span>
+                        </div>
+                     ))}
+                  </div>
+               </div>
+               <div className="md:w-1/2">
+                  <h3 className="text-2xl font-bold text-[#0b3259] mb-6 border-l-4 border-[#19a951] pl-4">
+                     Faculty Selection Process
+                  </h3>
+                  <div className="space-y-4">
+                     {[
+                        'Written Test (Subject Knowledge)',
+                        'Demo Lecture (Teaching Skills)',
+                        'Personal Interview (Values & Vision)',
+                        'Training & Orientation'
+                     ].map((item, i) => (
+                        <div key={i} className="flex items-center p-3 bg-gray-50 border-l-2 border-[#0b3259]">
+                           <Users className="w-5 h-5 text-[#0b3259] mr-3" />
+                           <span className="font-medium text-gray-800">{item}</span>
+                        </div>
+                     ))}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="bg-[#19a951] py-12 text-center">
+         <h2 className="text-2xl md:text-3xl font-black text-black mb-4 uppercase">
+            Want to be guided by the best?
+         </h2>
+         <Button 
+            onClick={() => navigate('/programs')}
+            className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-bold rounded-none"
+         >
+            Explore Our Programs <ArrowRight className="ml-2" />
+         </Button>
       </section>
 
       <Footer />
@@ -209,4 +227,3 @@ const Faculty = () => {
 };
 
 export default Faculty;
-

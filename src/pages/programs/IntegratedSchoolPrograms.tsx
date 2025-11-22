@@ -102,12 +102,12 @@ const IntegratedSchoolPrograms = () => {
 
   const advantages = [
     {
-      icon: <School className="w-8 h-8 text-blue-600" />,
+      icon: <School className="w-8 h-8 text-[#0b3259]" />,
       title: 'School Curriculum Aligned',
       description: 'Perfectly synchronized with your school syllabus and exam pattern'
     },
     {
-      icon: <Target className="w-8 h-8 text-green-600" />,
+      icon: <Target className="w-8 h-8 text-[#19a951]" />,
       title: 'Dual Benefit',
       description: 'Excel in both Board exams and JEE without compromising either'
     },
@@ -129,14 +129,14 @@ const IntegratedSchoolPrograms = () => {
       class: 'Class 9-10',
       focus: 'Foundation Building',
       description: 'Build strong conceptual foundation while maintaining excellent school performance',
-      color: 'bg-blue-50 border-blue-200'
+      color: 'bg-[#0b3259]/5 border-[#0b3259]/20'
     },
     {
       phase: 'Phase 2',
       class: 'Class 11',
       focus: 'Parallel Preparation',
       description: 'Simultaneous preparation for Board and JEE with balanced focus',
-      color: 'bg-green-50 border-green-200'
+      color: 'bg-[#19a951]/5 border-[#19a951]/20'
     },
     {
       phase: 'Phase 3',
@@ -150,17 +150,17 @@ const IntegratedSchoolPrograms = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-16">
+      <section className="bg-gradient-to-br from-[#19a951] to-[#19a951] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-4 bg-white text-green-600 hover:bg-gray-100">
+            <Badge className="mb-4 bg-white text-[#19a951] hover:bg-gray-100">
               <Sparkles className="w-4 h-4 mr-1" />
               Best of Both Worlds
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Integrated School Programs
             </h1>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Excel in school exams while building a strong foundation for JEE - No compromise needed
             </p>
           </div>
@@ -205,7 +205,7 @@ const IntegratedSchoolPrograms = () => {
           <div className="space-y-8">
             {programs.map((program) => (
               <Card key={program.id} className="hover:shadow-2xl transition-shadow">
-                <CardHeader className="bg-gradient-to-r from-green-50 to-white">
+                <CardHeader className="bg-gradient-to-r from-[#19a951]/5 to-white">
                   <Badge className="w-fit mb-3" variant="secondary">
                     {program.phase}
                   </Badge>
@@ -217,7 +217,7 @@ const IntegratedSchoolPrograms = () => {
                     {/* Left Column */}
                     <div>
                       <h3 className="font-semibold text-lg mb-4 flex items-center">
-                        <BookOpen className="w-5 h-5 mr-2 text-green-600" />
+                        <BookOpen className="w-5 h-5 mr-2 text-[#19a951]" />
                         Program Details
                       </h3>
                       <div className="space-y-3 mb-6">
@@ -244,21 +244,21 @@ const IntegratedSchoolPrograms = () => {
                         </div>
                       </div>
                       
-                      <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                        <div className="text-2xl font-bold text-green-700">{program.price}</div>
-                        <div className="text-sm text-green-600">Annual program fee</div>
+                      <div className="p-4 bg-[#19a951]/5 rounded-lg border border-[#19a951]/20">
+                        <div className="text-2xl font-bold text-[#19a951]">{program.price}</div>
+                        <div className="text-sm text-[#19a951]">Annual program fee</div>
                       </div>
 
                       {/* Expected Outcomes */}
                       <div className="mt-6">
                         <h4 className="font-semibold mb-3 flex items-center">
-                          <TrendingUp className="w-4 h-4 mr-2 text-green-600" />
+                          <TrendingUp className="w-4 h-4 mr-2 text-[#19a951]" />
                           Expected Outcomes
                         </h4>
                         <div className="space-y-2">
                           {program.outcomes.map((outcome, index) => (
                             <div key={index} className="flex items-start space-x-2">
-                              <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                              <CheckCircle2 className="w-4 h-4 text-[#19a951] mt-0.5 flex-shrink-0" />
                               <span className="text-sm text-gray-700">{outcome}</span>
                             </div>
                           ))}
@@ -269,13 +269,13 @@ const IntegratedSchoolPrograms = () => {
                     {/* Right Column */}
                     <div>
                       <h3 className="font-semibold text-lg mb-4 flex items-center">
-                        <CheckCircle2 className="w-5 h-5 mr-2 text-green-600" />
+                        <CheckCircle2 className="w-5 h-5 mr-2 text-[#19a951]" />
                         Key Features
                       </h3>
                       <div className="space-y-2">
                         {program.features.map((feature, index) => (
                           <div key={index} className="flex items-start space-x-3">
-                            <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                               </svg>
@@ -291,7 +291,7 @@ const IntegratedSchoolPrograms = () => {
                   <div className="flex flex-col sm:flex-row gap-4 mt-8">
                     <Button 
                       size="lg"
-                      className="bg-green-600 hover:bg-green-700 text-white flex-1"
+                      className="bg-[#19a951] hover:bg-[#19a951]/90 text-white flex-1"
                       onClick={() => navigate('/scholarship-test')}
                     >
                       Apply Now
@@ -299,7 +299,7 @@ const IntegratedSchoolPrograms = () => {
                     <Button 
                       size="lg"
                       variant="outline"
-                      className="border-2 border-green-600 text-green-600 hover:bg-green-50 flex-1"
+                      className="border-2 border-[#19a951] text-[#19a951] hover:bg-[#19a951]/5 flex-1"
                       onClick={() => window.location.href = 'tel:+919205321167'}
                     >
                       Get Details
@@ -336,18 +336,18 @@ const IntegratedSchoolPrograms = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="py-16 bg-gradient-to-r from-[#19a951] to-[#19a951] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Start Your Dual-Success Journey
           </h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p className="text-xl text-white/80 mb-8">
             Balance school excellence with JEE preparation from early on
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8"
+              className="bg-white text-[#19a951] hover:bg-gray-100 text-lg px-8"
               onClick={() => navigate('/scholarship-test')}
             >
               Register for Scholarship Test
@@ -355,7 +355,7 @@ const IntegratedSchoolPrograms = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-green-600 text-lg px-8"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#19a951] text-lg px-8"
               onClick={() => window.location.href = 'tel:+919205321167'}
             >
               Talk to Counselor

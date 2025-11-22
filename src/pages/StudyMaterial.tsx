@@ -4,15 +4,12 @@ import { Badge } from '@/components/ui/badge';
 import Footer from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
 import { 
-  BookOpen, 
-  FileText,
-  CheckCircle2,
-  Download,
+  Book, 
+  Download, 
+  FileText, 
+  CheckCircle2, 
   Layers,
-  Target,
-  TrendingUp,
-  BookMarked,
-  Clipboard
+  BookOpen
 } from 'lucide-react';
 
 const StudyMaterial = () => {
@@ -20,254 +17,138 @@ const StudyMaterial = () => {
 
   const materials = [
     {
-      icon: <BookOpen className="w-12 h-12 text-blue-600" />,
-      title: 'Theory Modules',
-      description: 'Comprehensive theory covering all JEE topics with detailed explanations, formulas, and important points',
-      features: [
-        'Complete syllabus coverage',
-        'Concept-wise organization',
-        'Important formulas highlighted',
-        'Solved examples included',
-        'Tips and tricks sections'
-      ]
+      title: 'Physics Modules',
+      desc: 'Comprehensive theory, solved examples, and graded exercises covering Mechanics to Modern Physics.',
+      type: 'Hard Copy + PDF',
+      color: 'border-l-4 border-[#0b3259]'
     },
     {
-      icon: <Clipboard className="w-12 h-12 text-green-600" />,
-      title: 'Practice Workbooks',
-      description: 'Extensive problem sets organized by difficulty level for thorough practice and concept reinforcement',
-      features: [
-        'Level-wise problems (Easy to Hard)',
-        '5000+ practice questions',
-        'Previous year JEE questions',
-        'Detailed solutions provided',
-        'Chapter-wise organization'
-      ]
+      title: 'Chemistry Modules',
+      desc: 'In-depth coverage of Physical, Organic, and Inorganic Chemistry with reaction mechanisms.',
+      type: 'Hard Copy + PDF',
+      color: 'border-l-4 border-[#19a951]'
     },
     {
-      icon: <FileText className="w-12 h-12 text-purple-600" />,
-      title: 'DPP (Daily Practice Papers)',
-      description: 'Daily assignments to ensure regular practice and consistent learning throughout the course',
-      features: [
-        'Topic-specific questions',
-        'Mixed difficulty levels',
-        'Time-bound practice',
-        'Regular submission tracking',
-        'Immediate feedback'
-      ]
+      title: 'Mathematics Modules',
+      desc: 'Theory and extensive problem sets for Algebra, Calculus, Coordinate Geometry, and more.',
+      type: 'Hard Copy + PDF',
+      color: 'border-l-4 border-black'
     },
     {
-      icon: <BookMarked className="w-12 h-12 text-orange-600" />,
-      title: 'Revision Modules',
-      description: 'Quick revision notes with key formulas, concepts, and important points for exam preparation',
-      features: [
-        'Concise summary of topics',
-        'Quick formula sheets',
-        'Important questions marked',
-        'Last-minute revision friendly',
-        'Mobile-friendly format'
-      ]
+      title: 'Question Banks',
+      desc: 'Chapter-wise previous year questions (PYQs) of last 40 years with detailed solutions.',
+      type: 'Practice Book',
+      color: 'border-l-4 border-gray-500'
+    },
+    {
+      title: 'Rank Booster Package',
+      desc: 'Special collection of 1000+ challenging problems for final revision and rank improvement.',
+      type: 'Revision Kit',
+      color: 'border-l-4 border-[#0b3259]'
+    },
+    {
+      title: 'Formula Handbooks',
+      desc: 'Concise summary of all important formulas and key concepts for quick revision.',
+      type: 'Pocket Book',
+      color: 'border-l-4 border-[#19a951]'
     }
-  ];
-
-  const subjects = [
-    {
-      name: 'Physics',
-      modules: 25,
-      topics: 45,
-      questions: '2500+',
-      color: 'bg-blue-50 border-blue-200'
-    },
-    {
-      name: 'Chemistry',
-      modules: 28,
-      topics: 52,
-      questions: '3000+',
-      color: 'bg-green-50 border-green-200'
-    },
-    {
-      name: 'Mathematics',
-      modules: 30,
-      topics: 48,
-      questions: '2800+',
-      color: 'bg-purple-50 border-purple-200'
-    }
-  ];
-
-  const features = [
-    'Self-designed by expert faculty',
-    'Aligned with latest JEE pattern',
-    'Progressive difficulty levels',
-    'Regular content updates',
-    'Digital + Print format available',
-    'Video solutions for tough problems',
-    'Mobile app access',
-    'Bookmark and note-taking features'
   ];
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-teal-600 to-teal-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge className="mb-4 bg-white text-teal-600 hover:bg-gray-100">
-              <BookOpen className="w-4 h-4 mr-1" />
-              Comprehensive & Well-Structured
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Study Material
-            </h1>
-            <p className="text-xl text-teal-100 max-w-3xl mx-auto">
-              Self-designed, comprehensive study material covering the entire JEE syllabus
-            </p>
+    <div className="min-h-screen pt-16 font-sans bg-gray-50">
+      {/* Header */}
+      <section className="bg-[#0b3259] text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-extrabold mb-2">Comprehensive Study Material</h1>
+            <p className="text-yellow-100 text-lg">Self-sufficient content designed by IIT alumni</p>
           </div>
+          <BookOpen className="w-20 h-20 text-white/20 hidden md:block" />
         </div>
       </section>
 
-      {/* Material Types */}
-      <section className="py-16 bg-gray-50">
+      {/* Material Grid */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Study Material Components
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Everything you need for complete JEE preparation
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {materials.map((material, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                    {material.icon}
-                  </div>
-                  <CardTitle className="text-2xl mb-2">{material.title}</CardTitle>
-                  <p className="text-gray-600">{material.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {material.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start space-x-3">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Subject-wise Breakdown */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Subject-wise Material
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {subjects.map((subject, index) => (
-              <Card key={index} className={`border-2 ${subject.color}`}>
-                <CardContent className="pt-8">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">{subject.name}</h3>
-                  <div className="space-y-4">
-                    <div className="text-center p-4 bg-white rounded-lg">
-                      <div className="text-3xl font-bold text-gray-900">{subject.modules}</div>
-                      <div className="text-sm text-gray-600">Theory Modules</div>
-                    </div>
-                    <div className="text-center p-4 bg-white rounded-lg">
-                      <div className="text-3xl font-bold text-gray-900">{subject.topics}</div>
-                      <div className="text-sm text-gray-600">Topics Covered</div>
-                    </div>
-                    <div className="text-center p-4 bg-white rounded-lg">
-                      <div className="text-3xl font-bold text-gray-900">{subject.questions}</div>
-                      <div className="text-sm text-gray-600">Practice Questions</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 bg-gradient-to-br from-teal-50 to-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Material Features
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">{feature}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {materials.map((item, idx) => (
+              <div key={idx} className={`bg-white p-6 shadow hover:shadow-xl transition-shadow rounded-r ${item.color}`}>
+                <div className="flex justify-between items-start mb-4">
+                   <div className="bg-gray-100 p-2 rounded">
+                      <Book className="w-6 h-6 text-gray-700" />
+                   </div>
+                   <Badge variant="secondary" className="text-xs font-normal">{item.type}</Badge>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{item.desc}</p>
+                <Button variant="link" className="p-0 text-[#0b3259] font-bold h-auto">
+                   View Sample
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Sample Material */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">View Sample Material</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Download sample chapters to see the quality of our study material
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {['Physics - Mechanics', 'Chemistry - Organic', 'Mathematics - Calculus'].map((sample, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <FileText className="w-12 h-12 text-teal-600 mx-auto mb-4" />
-                  <h3 className="font-semibold mb-4">{sample}</h3>
-                  <Button className="w-full" variant="outline">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download PDF
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+      {/* Features Section */}
+      <section className="py-16 bg-white border-t border-gray-200">
+         <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-12">
+               <h2 className="text-3xl font-bold text-gray-900">Why Our Material is Sufficient</h2>
+               <div className="w-16 h-1 bg-[#19a951] mx-auto mt-2"></div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+               <div className="flex gap-4">
+                  <Layers className="w-10 h-10 text-[#0b3259] flex-shrink-0" />
+                  <div>
+                     <h3 className="font-bold text-lg mb-1">Graded Difficulty</h3>
+                     <p className="text-sm text-gray-600">
+                        Exercises divided into Level 1 (Basic), Level 2 (JEE Main), and Level 3 (JEE Advanced).
+                     </p>
+                  </div>
+               </div>
+               <div className="flex gap-4">
+                  <FileText className="w-10 h-10 text-[#19a951] flex-shrink-0" />
+                  <div>
+                     <h3 className="font-bold text-lg mb-1">Detailed Solutions</h3>
+                     <p className="text-sm text-gray-600">
+                        Step-by-step solutions for every question to ensure concept application is understood.
+                     </p>
+                  </div>
+               </div>
+               <div className="flex gap-4">
+                  <CheckCircle2 className="w-10 h-10 text-black flex-shrink-0" />
+                  <div>
+                     <h3 className="font-bold text-lg mb-1">Error Free</h3>
+                     <p className="text-sm text-gray-600">
+                        Content rigorously reviewed by experts to ensure zero errors and ambiguity.
+                     </p>
+                  </div>
+               </div>
+               <div className="flex gap-4">
+                  <Download className="w-10 h-10 text-gray-500 flex-shrink-0" />
+                  <div>
+                     <h3 className="font-bold text-lg mb-1">Digital Access</h3>
+                     <p className="text-sm text-gray-600">
+                        Access all material on our mobile app anytime, anywhere for flexible learning.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get Complete Study Material
-          </h2>
-          <p className="text-xl text-teal-100 mb-8">
-            Enroll in our programs to access the full study material package
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-white text-teal-600 hover:bg-gray-100 text-lg px-8"
-              onClick={() => navigate('/programs')}
-            >
-              View Programs
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-teal-600 text-lg px-8"
-              onClick={() => navigate('/scholarship-test')}
-            >
-              Take Scholarship Test
-            </Button>
-          </div>
-        </div>
+      <section className="py-12 bg-[#19a951] text-center">
+         <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-black mb-6">Want to check the quality first?</h2>
+            <div className="flex justify-center gap-4">
+               <Button className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-none font-bold">
+                  Download Free Sample PDF
+               </Button>
+            </div>
+         </div>
       </section>
 
       <Footer />
@@ -276,4 +157,3 @@ const StudyMaterial = () => {
 };
 
 export default StudyMaterial;
-

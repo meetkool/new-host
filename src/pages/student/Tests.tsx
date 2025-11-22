@@ -15,7 +15,7 @@ const StudentTests = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <BookOpen className="w-8 h-8 text-blue-600" />
+              <BookOpen className="w-8 h-8 text-[#0b3259]" />
               <h1 className="text-2xl font-bold">Test Series</h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -66,7 +66,7 @@ const StudentTests = () => {
                         </span>
                       </div>
                     </div>
-                    <Button className="bg-blue-600 hover:bg-blue-700">
+                    <Button className="bg-[#0b3259] hover:bg-[#0b3259]/90">
                       <Play className="w-4 h-4 mr-2" />
                       Start Test
                     </Button>
@@ -91,20 +91,20 @@ const StudentTests = () => {
                         </Badge>
                       </div>
                       <div className="grid grid-cols-4 gap-4 mt-4">
-                        <div className="text-center p-3 bg-blue-50 rounded-lg">
-                          <div className="text-xl font-bold text-blue-600">245/300</div>
+                        <div className="text-center p-3 bg-[#0b3259]/5 rounded-lg">
+                          <div className="text-xl font-bold text-[#0b3259]">245/300</div>
                           <div className="text-xs text-gray-600">Score</div>
                         </div>
-                        <div className="text-center p-3 bg-green-50 rounded-lg">
-                          <div className="text-xl font-bold text-green-600">1,234</div>
+                        <div className="text-center p-3 bg-[#19a951]/5 rounded-lg">
+                          <div className="text-xl font-bold text-[#19a951]">1,234</div>
                           <div className="text-xs text-gray-600">AIR</div>
                         </div>
-                        <div className="text-center p-3 bg-purple-50 rounded-lg">
-                          <div className="text-xl font-bold text-purple-600">98.2</div>
+                        <div className="text-center p-3 bg-[#0b3259]/5 rounded-lg">
+                          <div className="text-xl font-bold text-[#0b3259]">98.2</div>
                           <div className="text-xs text-gray-600">Percentile</div>
                         </div>
-                        <div className="text-center p-3 bg-orange-50 rounded-lg">
-                          <div className="text-xl font-bold text-orange-600">78%</div>
+                        <div className="text-center p-3 bg-[#19a951]/5 rounded-lg">
+                          <div className="text-xl font-bold text-[#19a951]">78%</div>
                           <div className="text-xs text-gray-600">Accuracy</div>
                         </div>
                       </div>

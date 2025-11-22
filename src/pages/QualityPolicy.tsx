@@ -5,7 +5,7 @@ const QualityPolicy = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-b from-[#0b3259]/5 to-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Award className="w-16 h-16 mx-auto mb-6 text-primary" />
@@ -27,8 +27,8 @@ const QualityPolicy = () => {
 
             <div className="space-y-8 mb-12">
               {/* Principle 1 */}
-              <div className="bg-gradient-to-r from-blue-50 to-white dark:from-blue-900/20 dark:to-gray-800 border-l-4 border-blue-600 p-6 rounded-r-lg shadow-sm">
-                <h3 className="text-2xl font-bold mb-3 text-blue-900 dark:text-blue-100">
+              <div className="bg-gradient-to-r from-[#0b3259]/5 to-white dark:from-blue-900/20 dark:to-gray-800 border-l-4 border-[#0b3259] p-6 rounded-r-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-3 text-[#0b3259] dark:text-white/80">
                   Mutually Beneficial Partnerships
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -37,8 +37,8 @@ const QualityPolicy = () => {
               </div>
 
               {/* Principle 2 */}
-              <div className="bg-gradient-to-r from-green-50 to-white dark:from-green-900/20 dark:to-gray-800 border-l-4 border-green-600 p-6 rounded-r-lg shadow-sm">
-                <h3 className="text-2xl font-bold mb-3 text-green-900 dark:text-green-100">
+              <div className="bg-gradient-to-r from-[#19a951]/5 to-white dark:from-green-900/20 dark:to-gray-800 border-l-4 border-[#19a951] p-6 rounded-r-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-3 text-[#19a951] dark:text-white/80">
                   Commitment to Consistency
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -47,8 +47,8 @@ const QualityPolicy = () => {
               </div>
 
               {/* Principle 3 */}
-              <div className="bg-gradient-to-r from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-800 border-l-4 border-purple-600 p-6 rounded-r-lg shadow-sm">
-                <h3 className="text-2xl font-bold mb-3 text-purple-900 dark:text-purple-100">
+              <div className="bg-gradient-to-r from-[#0b3259]/5 to-white dark:from-purple-900/20 dark:to-gray-800 border-l-4 border-[#0b3259] p-6 rounded-r-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-3 text-[#0b3259] dark:text-white/80">
                   Proactive Risk Management
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -57,8 +57,8 @@ const QualityPolicy = () => {
               </div>
 
               {/* Principle 4 */}
-              <div className="bg-gradient-to-r from-orange-50 to-white dark:from-orange-900/20 dark:to-gray-800 border-l-4 border-orange-600 p-6 rounded-r-lg shadow-sm">
-                <h3 className="text-2xl font-bold mb-3 text-orange-900 dark:text-orange-100">
+              <div className="bg-gradient-to-r from-[#19a951]/5 to-white dark:from-orange-900/20 dark:to-gray-800 border-l-4 border-[#19a951] p-6 rounded-r-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-3 text-[#19a951] dark:text-white/80">
                   Continuous Improvement
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -67,8 +67,8 @@ const QualityPolicy = () => {
               </div>
 
               {/* Principle 5 */}
-              <div className="bg-gradient-to-r from-indigo-50 to-white dark:from-indigo-900/20 dark:to-gray-800 border-l-4 border-indigo-600 p-6 rounded-r-lg shadow-sm">
-                <h3 className="text-2xl font-bold mb-3 text-indigo-900 dark:text-indigo-100">
+              <div className="bg-gradient-to-r from-[#0b3259]/5 to-white dark:from-indigo-900/20 dark:to-gray-800 border-l-4 border-[#0b3259] p-6 rounded-r-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-3 text-[#0b3259] dark:text-white/80">
                   Skill Development & Empowerment
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -77,7 +77,7 @@ const QualityPolicy = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-2xl shadow-lg mb-8">
+            <div className="bg-gradient-to-br from-[#0b3259] to-[#0b3259] text-white p-8 rounded-2xl shadow-lg mb-8">
               <h2 className="text-3xl font-bold mb-4">Our Goal</h2>
               <p className="text-lg leading-relaxed mb-4">
                 Our goal is to make L2H a leader in skill development and learning services, delivering world-class educational and training programs. Every member of our organization is responsible for ensuring complete satisfaction of our learners by meeting and exceeding their expectations with best-in-class services.

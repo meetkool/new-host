@@ -27,14 +27,14 @@ const StudentLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#0b3259] to-[#0b3259] flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <div className="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <GraduationCap className="w-12 h-12 text-blue-600" />
+            <GraduationCap className="w-12 h-12 text-[#0b3259]" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">Student Portal</h1>
-          <p className="text-blue-100">Log in to access your dashboard</p>
+          <p className="text-white/80">Log in to access your dashboard</p>
         </div>
 
         <Card>
@@ -83,19 +83,19 @@ const StudentLogin = () => {
                   <input type="checkbox" className="rounded" />
                   <span className="text-gray-600">Remember me</span>
                 </label>
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text-[#0b3259] hover:underline">
                   Forgot password?
                 </a>
               </div>
 
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6">
+              <Button type="submit" className="w-full bg-[#0b3259] hover:bg-[#0b3259]/90 text-lg py-6">
                 Login
               </Button>
             </form>
 
             <div className="mt-6 text-center text-sm text-gray-600">
               Don't have an account?{' '}
-              <a href="/scholarship-test" className="text-blue-600 hover:underline font-semibold">
+              <a href="/scholarship-test" className="text-[#0b3259] hover:underline font-semibold">
                 Register for Scholarship Test
               </a>
             </div>
@@ -103,7 +103,7 @@ const StudentLogin = () => {
         </Card>
 
         <div className="mt-6 text-center">
-          <a href="/" className="text-white hover:text-blue-100 text-sm">
+          <a href="/" className="text-white hover:text-white/80 text-sm">
             ← Back to Home
           </a>
         </div>

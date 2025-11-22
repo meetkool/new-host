@@ -366,7 +366,7 @@ const Home = () => {
     <div className="min-h-screen bg-white font-sans pt-16">
       
       {/* SECTION 1: TOP BANNER (Yellow) */}
-      <div className="bg-[#68B176] py-6 px-4 text-center relative overflow-hidden">
+      <div className="bg-[#19a951] py-6 px-4 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-wide mb-3">
             BUILT UPON {BRANDING.stats.yearsOfExperience} DECADES OF HARDWORK
@@ -380,19 +380,19 @@ const Home = () => {
       </div>
 
       {/* SECTION 2: HERO (Red Background with Toppers) */}
-      <div className="relative bg-[#113B55] pt-16 pb-32 px-4 overflow-hidden">
+      <div className="relative bg-[#0b3259] pt-16 pb-32 px-4 overflow-hidden">
         {/* Curve at bottom */}
         <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: "ellipse(70% 100% at 50% 100%)" }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white space-y-8 text-center lg:text-left">
-              <Badge className="bg-[#68B176] text-black hover:bg-[#FFC107] border-none px-4 py-1.5 text-sm font-bold tracking-wider">
+              <Badge className="bg-[#19a951] text-black hover:bg-[#0E312C] border-none px-4 py-1.5 text-sm font-bold tracking-wider">
                 ADMISSIONS OPEN 2025-26
               </Badge>
               <h1 className="text-4xl md:text-6xl font-black leading-tight">
                 A Legacy of <br/>
-                <span className="text-[#68B176] relative">
+                <span className="text-[#19a951] relative">
                   Excellence
                   <svg className="absolute w-full h-3 -bottom-1 left-0 text-white opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
@@ -404,14 +404,14 @@ const Home = () => {
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Button 
-                  className="bg-[#68B176] text-black hover:bg-white hover:text-[#113B55] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-all transform hover:scale-105"
+                  className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-all transform hover:scale-105"
                   onClick={() => navigate('/programs')}
                 >
                   Enroll Now
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#113B55] font-bold text-lg px-8 py-6 rounded-full hover:shadow-lg transition-all"
+                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full hover:shadow-lg transition-all"
                   onClick={() => navigate('/scholarship-test')}
                 >
                   Scholarship Test
@@ -425,13 +425,13 @@ const Home = () => {
                 {toppers.map((t, i) => (
                   <div key={i} className={`bg-white p-3 rounded-xl shadow-2xl transform transition-transform hover:-translate-y-2 duration-300 ${i === 1 ? 'mb-12 scale-110 z-10' : 'opacity-90'}`}>
                     <div className="relative">
-                      <img src={t.img} alt={t.name} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg mx-auto mb-3 border-4 border-[#68B176]" />
-                      <div className="absolute -top-3 -right-3 bg-[#113B55] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-xs md:text-sm shadow-md border-2 border-white">
+                      <img src={t.img} alt={t.name} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg mx-auto mb-3 border-4 border-[#19a951]" />
+                      <div className="absolute -top-3 -right-3 bg-[#0b3259] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-xs md:text-sm shadow-md border-2 border-white">
                         {t.rank}
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-xl md:text-2xl font-black text-[#113B55]">AIR {t.rank}</div>
+                      <div className="text-xl md:text-2xl font-black text-[#0b3259]">AIR {t.rank}</div>
                       <div className="font-bold text-gray-900 text-xs md:text-sm line-clamp-1">{t.name}</div>
                     </div>
                   </div>
@@ -459,7 +459,7 @@ const Home = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`w-full text-left px-6 py-4 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${
                     activeTab === tab
-                      ? 'bg-[#68B176] text-black shadow-md translate-x-2'
+                      ? 'bg-[#19a951] text-black shadow-md translate-x-2'
                       : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
                   }`}
                 >
@@ -469,7 +469,7 @@ const Home = () => {
               
               <div className="pt-8">
                 <Button 
-                  className="w-full bg-[#113B55] hover:bg-[#A51F1F] text-white font-bold py-6 rounded-full"
+                  className="w-full bg-[#0b3259] hover:bg-[#0E312C] text-white font-bold py-6 rounded-full"
                   onClick={() => navigate('/results')}
                 >
                   Learn from our toppers
@@ -491,9 +491,9 @@ const Home = () => {
                     <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                       <div className="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow h-full border border-gray-100">
                         {/* Card Header with Yellow/Orange Gradient */}
-                        <div className="h-48 bg-gradient-to-br from-[#68B176] to-[#FFA000] relative p-4">
+                        <div className="h-48 bg-gradient-to-br from-[#19a951] to-[#0b3259] relative p-4">
                           <div className="text-sm font-medium text-black/80 mb-1">All India Rank</div>
-                          <div className="text-6xl font-black text-[#113B55] leading-none mb-4">
+                          <div className="text-6xl font-black text-[#0b3259] leading-none mb-4">
                             {student.rank}
                           </div>
                           
@@ -535,7 +535,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
-              {BRANDING.name} Coaching is <span className="text-[#113B55] relative inline-block">Uniquely Different</span>
+              {BRANDING.name} Coaching is <span className="text-[#0b3259] relative inline-block">Uniquely Different</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">
               A rigorous scientific approach that transforms average students into achievers.
@@ -545,8 +545,8 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {usps.map((usp, i) => (
               <div key={i} className="flex gap-5 items-start group p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="bg-[#E8E1DD] p-4 rounded-full group-hover:bg-[#68B176] transition-colors duration-300 shrink-0 shadow-sm">
-                  <usp.icon className="w-8 h-8 text-[#113B55]" />
+                <div className="bg-[#E8E1DD] p-4 rounded-full group-hover:bg-[#19a951] transition-colors duration-300 shrink-0 shadow-sm">
+                  <usp.icon className="w-8 h-8 text-[#0b3259]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{usp.title}</h3>
@@ -566,18 +566,18 @@ const Home = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Our Programs Designed<br/>to Help You Win
               </h2>
-              <div className="h-1.5 w-24 bg-[#113B55] rounded-full"></div>
+              <div className="h-1.5 w-24 bg-[#0b3259] rounded-full"></div>
             </div>
-            <Button variant="link" className="text-[#113B55] font-bold text-lg group" onClick={() => navigate('/programs')}>
+            <Button variant="link" className="text-[#0b3259] font-bold text-lg group" onClick={() => navigate('/programs')}>
               View All Programs <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Classroom Programs', color: 'bg-blue-600', img: IMAGES.programs.classroom, sub: 'For Class 6 to 12' },
-              { title: 'Integrated School', color: 'bg-green-600', img: IMAGES.programs.integrated, sub: 'School + Coaching' },
-              { title: 'Rank Improvement', color: 'bg-purple-600', img: IMAGES.programs.crash, sub: 'Crash Courses' }
+              { title: 'Classroom Programs', color: 'bg-[#0b3259]', img: IMAGES.programs.classroom, sub: 'For Class 6 to 12' },
+              { title: 'Integrated School', color: 'bg-[#19a951]', img: IMAGES.programs.integrated, sub: 'School + Coaching' },
+              { title: 'Rank Improvement', color: 'bg-[#0b3259]', img: IMAGES.programs.crash, sub: 'Crash Courses' }
             ].map((p, i) => (
               <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer h-full flex flex-col" onClick={() => navigate('/programs')}>
                 <div className="h-48 overflow-hidden relative">
@@ -585,9 +585,9 @@ const Home = () => {
                   <img src={p.img} alt={p.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#113B55] transition-colors">{p.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#0b3259] transition-colors">{p.title}</h3>
                   <p className="text-gray-500 font-medium mb-6">{p.sub}</p>
-                  <div className="mt-auto flex items-center text-[#113B55] font-bold uppercase tracking-wider text-sm">
+                  <div className="mt-auto flex items-center text-[#0b3259] font-bold uppercase tracking-wider text-sm">
                     Know More <ArrowRight className="w-4 h-4 ml-2" />
                   </div>
                 </div>
@@ -610,8 +610,8 @@ const Home = () => {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <MonitorPlay className="w-16 h-16 text-[#113B55]" />
-              <Button className="bg-[#113B55] text-white hover:bg-black hover:text-white font-bold px-8 py-6 text-lg rounded-full shadow-lg">
+              <MonitorPlay className="w-16 h-16 text-[#0b3259]" />
+              <Button className="bg-[#0b3259] text-white hover:bg-black hover:text-white font-bold px-8 py-6 text-lg rounded-full shadow-lg">
                 Explore eSchool
               </Button>
             </div>
@@ -627,18 +627,18 @@ const Home = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="border-l-8 border-[#113B55] shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-l-8 border-[#0b3259] shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <CardTitle className="text-xl font-bold">Talent Reward Exam (FTRE)</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-2 text-gray-600 mb-4">
-                  <Calendar className="w-5 h-5 text-[#113B55]" />
+                  <Calendar className="w-5 h-5 text-[#0b3259]" />
                   <span>25th December 2025</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <Badge variant="secondary">Class 5 to 11</Badge>
-                  <Button size="sm" className="bg-[#113B55] hover:bg-black text-white" onClick={() => navigate('/scholarship-test')}>Register Now</Button>
+                  <Button size="sm" className="bg-[#0b3259] hover:bg-black text-white" onClick={() => navigate('/scholarship-test')}>Register Now</Button>
                 </div>
               </CardContent>
             </Card>
@@ -654,7 +654,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <Badge variant="secondary">Class 11 & 12</Badge>
-                  <Button size="sm" className="bg-black hover:bg-[#113B55] text-white" onClick={() => navigate('/scholarship-test')}>Register Now</Button>
+                  <Button size="sm" className="bg-black hover:bg-[#0b3259] text-white" onClick={() => navigate('/scholarship-test')}>Register Now</Button>
                 </div>
               </CardContent>
             </Card>
@@ -666,8 +666,8 @@ const Home = () => {
       <section className="py-20 bg-[#E8E1DD] relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block bg-black text-[#68B176] font-bold px-4 py-1 rounded mb-4">OUR SECRET SAUCE</div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#113B55] mb-6">
+            <div className="inline-block bg-black text-[#19a951] font-bold px-4 py-1 rounded mb-4">OUR SECRET SAUCE</div>
+            <h2 className="text-3xl md:text-5xl font-black text-[#0b3259] mb-6">
               Our Methodology
             </h2>
             <Card className="bg-white/90 backdrop-blur max-w-2xl mx-auto border-none shadow-lg">
@@ -681,7 +681,7 @@ const Home = () => {
 
           <div className="space-y-0 relative">
             {/* Central Line - The "Path" */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-3 bg-[#113B55] md:-translate-x-1/2 rounded-full"></div>
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-3 bg-[#0b3259] md:-translate-x-1/2 rounded-full"></div>
 
             {methodologySteps.map((step, i) => (
               <div key={i} className={`flex items-center gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} relative pb-12`}>
@@ -690,17 +690,17 @@ const Home = () => {
                 <div className="hidden md:block md:w-1/2"></div>
 
                 {/* Center Point on Line */}
-                <div className="absolute left-8 md:left-1/2 w-8 h-8 bg-[#68B176] border-4 border-[#113B55] rounded-full z-20 transform -translate-x-1/2 md:translate-x-[-50%]"></div>
+                <div className="absolute left-8 md:left-1/2 w-8 h-8 bg-[#19a951] border-4 border-[#0b3259] rounded-full z-20 transform -translate-x-1/2 md:translate-x-[-50%]"></div>
                 
                 {/* Connecting Arm */}
-                <div className={`hidden md:block absolute top-1/2 h-2 bg-[#113B55] w-16 z-0 ${i % 2 === 0 ? 'left-1/2 ml-4' : 'right-1/2 mr-4'}`}></div>
+                <div className={`hidden md:block absolute top-1/2 h-2 bg-[#0b3259] w-16 z-0 ${i % 2 === 0 ? 'left-1/2 ml-4' : 'right-1/2 mr-4'}`}></div>
 
                 {/* Content Card */}
                 <div className={`flex-1 md:w-1/2 pl-20 md:pl-0 ${i % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}>
-                  <div className="bg-white p-8 rounded-2xl shadow-xl border-b-8 border-[#113B55] relative group hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="bg-white p-8 rounded-2xl shadow-xl border-b-8 border-[#0b3259] relative group hover:transform hover:scale-105 transition-all duration-300">
                     {/* Icon Bubble */}
-                    <div className="absolute -top-8 left-8 bg-white p-3 rounded-xl shadow-lg border-2 border-[#68B176]">
-                      <step.icon className="w-8 h-8 text-[#113B55]" />
+                    <div className="absolute -top-8 left-8 bg-white p-3 rounded-xl shadow-lg border-2 border-[#19a951]">
+                      <step.icon className="w-8 h-8 text-[#0b3259]" />
                     </div>
                     
                     <h3 className="text-xl font-bold text-gray-900 mt-4 mb-3">{step.title}</h3>
@@ -712,7 +712,7 @@ const Home = () => {
             ))}
             
             <div className="text-center pt-8 relative z-30">
-               <Button className="bg-[#113B55] hover:bg-[#A51F1F] text-white px-8 py-2 rounded-full text-sm font-bold shadow-lg">
+               <Button className="bg-[#0b3259] hover:bg-[#0E312C] text-white px-8 py-2 rounded-full text-sm font-bold shadow-lg">
                  Read more
                </Button>
             </div>
@@ -730,7 +730,7 @@ const Home = () => {
               handcrafted to offer highly personalized mentorship to every child by leveraging the power of technology. By understanding 
               that every child learns differently, myPAT® empowers every student to learn the way they want.
             </p>
-            <Button className="bg-[#68B176] text-black hover:bg-white hover:text-[#113B55] rounded-full px-8 py-6 font-bold text-lg shadow-lg">
+            <Button className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] rounded-full px-8 py-6 font-bold text-lg shadow-lg">
               Know More
             </Button>
           </div>
@@ -746,7 +746,7 @@ const Home = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="flex flex-col items-center gap-3">
-              <div className="bg-[#68B176] p-4 rounded-lg shadow-md">
+              <div className="bg-[#19a951] p-4 rounded-lg shadow-md">
                 <BookOpen className="w-8 h-8 text-black" />
               </div>
               <div className="text-3xl font-bold text-gray-900">73</div>
@@ -754,7 +754,7 @@ const Home = () => {
             </div>
             
             <div className="flex flex-col items-center gap-3">
-              <div className="bg-[#68B176] p-4 rounded-lg shadow-md">
+              <div className="bg-[#19a951] p-4 rounded-lg shadow-md">
                 <Award className="w-8 h-8 text-black" />
               </div>
               <div className="text-3xl font-bold text-gray-900">2</div>
@@ -762,7 +762,7 @@ const Home = () => {
             </div>
             
             <div className="flex flex-col items-center gap-3">
-              <div className="bg-[#68B176] p-4 rounded-lg shadow-md">
+              <div className="bg-[#19a951] p-4 rounded-lg shadow-md">
                 <Shield className="w-8 h-8 text-black" />
               </div>
               <div className="text-3xl font-bold text-gray-900">6</div>
@@ -770,7 +770,7 @@ const Home = () => {
             </div>
             
             <div className="flex flex-col items-center gap-3">
-              <div className="bg-[#68B176] p-4 rounded-lg shadow-md">
+              <div className="bg-[#19a951] p-4 rounded-lg shadow-md">
                 <Users className="w-8 h-8 text-black" />
               </div>
               <div className="text-3xl font-bold text-gray-900">49</div>
@@ -781,7 +781,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 11: Quote & Footer Top */}
-      <div className="bg-[#113B55] text-white py-16 text-center">
+      <div className="bg-[#0b3259] text-white py-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <blockquote className="text-xl md:text-2xl font-medium italic mb-8 text-white/90 leading-relaxed">
             "{BRANDING.name}'s journey from just an IIT-JEE Coaching Institute to the most powerful brand 

@@ -259,7 +259,7 @@ export default function BlogDetail() {
             <article className="min-w-0">
           {/* Category Badge */}
           <Link to={`/blogs?category=${blog.categoryId.slug}`}>
-            <Badge className="mb-4 bg-blue-600 hover:bg-blue-700">
+            <Badge className="mb-4 bg-[#0b3259] hover:bg-[#0b3259]/90">
               {blog.categoryId.name}
             </Badge>
           </Link>
@@ -389,7 +389,7 @@ export default function BlogDetail() {
                         href={blog.authorId.facebook}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-600"
+                        className="text-gray-600 hover:text-[#0b3259]"
                       >
                         <Facebook className="w-5 h-5" />
                       </a>
@@ -399,7 +399,7 @@ export default function BlogDetail() {
                         href={blog.authorId.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-400"
+                        className="text-gray-600 hover:text-[#0b3259]"
                       >
                         <Twitter className="w-5 h-5" />
                       </a>
@@ -409,7 +409,7 @@ export default function BlogDetail() {
                         href={blog.authorId.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-700"
+                        className="text-gray-600 hover:text-[#0b3259]"
                       >
                         <Linkedin className="w-5 h-5" />
                       </a>
@@ -433,7 +433,7 @@ export default function BlogDetail() {
                       <li key={category._id}>
                         <Link
                           to={`/blogs?category=${category.slug}`}
-                          className="flex items-center justify-between text-gray-700 hover:text-blue-600 transition-colors"
+                          className="flex items-center justify-between text-gray-700 hover:text-[#0b3259] transition-colors"
                         >
                           <span className="text-base">{category.name}</span>
                           <span className="text-sm text-gray-500">({category.postCount})</span>
@@ -462,11 +462,11 @@ export default function BlogDetail() {
                               alt={relatedBlog.title}
                               className="w-full h-32 object-cover rounded-lg"
                             />
-                            <Badge className="absolute top-2 right-2 bg-blue-600 hover:bg-blue-700 text-xs">
+                            <Badge className="absolute top-2 right-2 bg-[#0b3259] hover:bg-[#0b3259]/90 text-xs">
                               TIPS
                             </Badge>
                           </div>
-                          <h4 className="font-semibold text-sm mb-1 group-hover:text-blue-600 transition-colors line-clamp-2">
+                          <h4 className="font-semibold text-sm mb-1 group-hover:text-[#0b3259] transition-colors line-clamp-2">
                             {relatedBlog.title}
                           </h4>
                           <time className="text-xs text-gray-500">
@@ -499,11 +499,11 @@ export default function BlogDetail() {
                               alt={recBlog.title}
                               className="w-full h-32 object-cover rounded-lg"
                             />
-                            <Badge className="absolute top-2 right-2 bg-blue-600 hover:bg-blue-700 text-xs">
+                            <Badge className="absolute top-2 right-2 bg-[#0b3259] hover:bg-[#0b3259]/90 text-xs">
                               TIPS
                             </Badge>
                           </div>
-                          <h4 className="font-semibold text-sm mb-1 group-hover:text-blue-600 transition-colors line-clamp-2">
+                          <h4 className="font-semibold text-sm mb-1 group-hover:text-[#0b3259] transition-colors line-clamp-2">
                             {recBlog.title}
                           </h4>
                           <time className="text-xs text-gray-500">
