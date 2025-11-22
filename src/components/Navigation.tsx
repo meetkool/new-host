@@ -116,7 +116,7 @@ const Navigation = () => {
                         <div key={index} className="space-y-4 border-r last:border-r-0 border-gray-100 pr-4">
                           <Link 
                             to={section.path}
-                            className="flex items-center justify-between text-[#C62828] font-bold text-sm tracking-wider hover:text-red-700 uppercase mb-4"
+                            className="flex items-center justify-between text-[#113B55] font-bold text-sm tracking-wider hover:text-red-700 uppercase mb-4"
                             onClick={() => setIsProgramsOpen(false)}
                           >
                             {section.title}
@@ -127,7 +127,7 @@ const Navigation = () => {
                               <li key={idx}>
                                 <Link
                                   to={`${section.path}?class=${item.replace(/\s+/g, '-').toLowerCase()}`}
-                                  className="text-gray-600 hover:text-[#C62828] text-sm font-medium transition-colors block py-1"
+                                  className="text-gray-600 hover:text-[#113B55] text-sm font-medium transition-colors block py-1"
                                   onClick={() => setIsProgramsOpen(false)}
                                 >
                                   {item}
@@ -223,7 +223,7 @@ const Navigation = () => {
                 <div className="pl-4 space-y-4 border-l-2 border-gray-100 ml-1">
                   {megaMenuData.map((section, index) => (
                     <div key={index} className="space-y-2">
-                      <div className="text-[#C62828] font-bold text-xs uppercase">{section.title}</div>
+                      <div className="text-[#113B55] font-bold text-xs uppercase">{section.title}</div>
                       <ul className="space-y-2">
                         {section.items.map((item, idx) => (
                           <li key={idx}>
