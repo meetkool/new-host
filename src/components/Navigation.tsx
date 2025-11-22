@@ -108,9 +108,10 @@ const Navigation = () => {
                   {/* Backdrop to close on click outside */}
                   <div className="fixed inset-0 z-40 bg-transparent" onClick={() => setIsProgramsOpen(false)}></div>
                   
-                  {/* Mega Menu */}
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[900px] bg-white border border-border rounded-lg shadow-2xl p-8 animate-scale-in z-50">
-                    <div className="grid grid-cols-3 gap-8">
+                  {/* Mega Menu - Fixed positioning to ensure responsiveness and centering on viewport */}
+                  <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-[95vw] max-w-[1000px] z-50 px-4">
+                    <div className="bg-white border border-border rounded-b-xl shadow-2xl p-6 md:p-8">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       {megaMenuData.map((section, index) => (
                         <div key={index} className="space-y-4 border-r last:border-r-0 border-gray-100 pr-4">
                           <Link 
@@ -138,6 +139,7 @@ const Navigation = () => {
                       ))}
                     </div>
                   </div>
+                </div>
                 </>
               )}
             </div>
