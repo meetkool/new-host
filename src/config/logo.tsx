@@ -22,10 +22,10 @@ export const logoConfig: LogoConfig = {
   type: 'image', // Options: 'image', 'icon-text', 'text-only'
   
   // Image Configuration (L2H Logo)
-  imageUrl: '/images/logo.png',
-  imageAlt: 'L2H - Low to High Upskilling Courses',
-  width: '120px',
-  height: '40px',
+  imageUrl: '/images/prayzan_logojpeg.jpeg',
+  imageAlt: 'Prayozan School of Success',
+  width: '150px',
+  height: 'auto',
   linkClassName: 'flex items-center hover-scale transition-all duration-300',
 
   // OLD Icon + Text Configuration (commented out)

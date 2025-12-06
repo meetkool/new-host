@@ -84,8 +84,8 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
-              className={`font-medium transition-smooth ${
-                isActive('/') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`font-bold transition-smooth ${
+                isActive('/') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
               }`}
             >
               Home
@@ -95,8 +95,8 @@ const Navigation = () => {
             <div className="relative group">
               <button
                 onClick={() => setIsProgramsOpen(!isProgramsOpen)}
-                className={`flex items-center space-x-1 font-medium transition-smooth ${
-                  location.pathname.startsWith('/programs') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                className={`flex items-center space-x-1 font-bold transition-smooth ${
+                  location.pathname.startsWith('/programs') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
                 }`}
               >
                 <span>Programs</span>
@@ -146,8 +146,8 @@ const Navigation = () => {
 
             <Link
               to="/school-programs"
-              className={`font-medium transition-smooth ${
-                isActive('/school-programs') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`font-bold transition-smooth ${
+                isActive('/school-programs') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
               }`}
             >
               School Programs
@@ -155,8 +155,8 @@ const Navigation = () => {
 
             <Link
               to="/test-series"
-              className={`font-medium transition-smooth ${
-                isActive('/test-series') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`font-bold transition-smooth ${
+                isActive('/test-series') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
               }`}
             >
               Test Series
@@ -164,8 +164,8 @@ const Navigation = () => {
 
             <Link
               to="/results"
-              className={`font-medium transition-smooth ${
-                isActive('/results') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`font-bold transition-smooth ${
+                isActive('/results') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
               }`}
             >
               Results
@@ -173,8 +173,8 @@ const Navigation = () => {
 
             <Link
               to="/faculty"
-              className={`font-medium transition-smooth ${
-                isActive('/faculty') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`font-bold transition-smooth ${
+                isActive('/faculty') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
               }`}
             >
               Faculty
@@ -182,8 +182,8 @@ const Navigation = () => {
 
             <Link
               to="/about-us"
-              className={`font-medium transition-smooth ${
-                isActive('/about-us') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`font-bold transition-smooth ${
+                isActive('/about-us') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
               }`}
             >
               About Us
@@ -195,13 +195,15 @@ const Navigation = () => {
             <Button 
               variant="outline"
               size="sm"
+              className="border-[#0b3259] text-[#0b3259] hover:bg-[#0b3259] hover:text-white font-bold"
               onClick={() => window.location.href = '/student/login'}
             >
               Student Login
             </Button>
             <Button 
-              variant="hero" 
+              variant="default" 
               size="lg"
+              className="bg-[#0b3259] text-white hover:bg-[#19a951] font-bold"
               onClick={() => window.location.href = '/scholarship-test'}
             >
               <Trophy className="w-4 h-4 mr-2" />
