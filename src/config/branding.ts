@@ -2,25 +2,25 @@
 
 export const BRANDING = {
   // Company Information
-  name: 'Elite IIT Academy',
-  tagline: 'Your Path to IIT Success',
-  description: 'Premier coaching institute for JEE Main & Advanced preparation',
+  name: 'Prayozan',
+  tagline: 'School of Success',
+  description: 'India\'s leading education enterprise dedicated to transforming how students learn, grow, and achieve success.',
   
   // Contact Information
   contact: {
     phone: '+91-9876543210',
-    email: 'info@eliteiitacademy.com',
+    email: 'info@prayozan.com',
     whatsapp: '919876543210',
-    address: 'Elite IIT Academy, Education Complex, New Delhi - 110001'
+    address: 'Prayozan School of Success, Education Complex, New Delhi - 110001'
   },
   
   // Social Media (Placeholder)
   social: {
-    facebook: 'https://facebook.com/eliteiitacademy',
-    twitter: 'https://twitter.com/eliteiitacademy',
-    instagram: 'https://instagram.com/eliteiitacademy',
-    youtube: 'https://youtube.com/@eliteiitacademy',
-    linkedin: 'https://linkedin.com/company/eliteiitacademy'
+    facebook: 'https://facebook.com/prayozan',
+    twitter: 'https://twitter.com/prayozan',
+    instagram: 'https://instagram.com/prayozan',
+    youtube: 'https://youtube.com/@prayozan',
+    linkedin: 'https://linkedin.com/company/prayozan'
   },
   
   // Statistics
