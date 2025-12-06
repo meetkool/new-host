@@ -81,7 +81,7 @@ const Navigation = () => {
           <Logo />
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
               className={`font-medium transition-smooth ${
@@ -143,6 +143,15 @@ const Navigation = () => {
                 </>
               )}
             </div>
+
+            <Link
+              to="/school-programs"
+              className={`font-medium transition-smooth ${
+                isActive('/school-programs') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              School Programs
+            </Link>
 
             <Link
               to="/test-series"

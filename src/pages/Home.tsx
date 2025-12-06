@@ -33,7 +33,10 @@ import {
   Target, 
   Zap,
   MonitorPlay,
-  Calendar
+  Calendar,
+  Calculator,
+  Dna,
+  Leaf
 } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -91,6 +94,37 @@ const Home = () => {
       { rank: "Gold", name: "Ishaan Vi", program: "Junior Rankers", img: "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=400&h=400&fit=crop" },
       { rank: "Silver", name: "Riya Sen", program: "Foundation Program", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" },
       { rank: "Gold", name: "Dev Kumar", program: "Junior Science", img: "https://images.unsplash.com/photo-1595152772835-219638901822?w=400&h=400&fit=crop" }
+    ]
+  };
+
+  // School Programs State
+  const [activeProgramTab, setActiveProgramTab] = useState("Foundation (6-10)");
+
+  const schoolProgramsData: Record<string, any[]> = {
+    "Foundation (6-10)": [
+      { subject: "Mathematics", icon: Calculator },
+      { subject: "Science", icon: FlaskConical },
+      { subject: "Social Studies", icon: Globe },
+      { subject: "English", icon: BookOpen }
+    ],
+    "Class 11": [
+      { subject: "Physics", icon: Zap },
+      { subject: "Chemistry", icon: FlaskConical },
+      { subject: "Mathematics", icon: Calculator },
+      { subject: "Biology", icon: Dna }
+    ],
+    "Class 12": [
+      { subject: "Physics", icon: Zap },
+      { subject: "Chemistry", icon: FlaskConical },
+      { subject: "Mathematics", icon: Calculator },
+      { subject: "Biology", icon: Dna }
+    ],
+    "NEET/JEE": [
+      { subject: "Physics", icon: Zap },
+      { subject: "Chemistry", icon: FlaskConical },
+      { subject: "Mathematics (JEE)", icon: Calculator },
+      { subject: "Zoology (NEET)", icon: Dna },
+      { subject: "Botany (NEET)", icon: Leaf }
     ]
   };
   
@@ -369,11 +403,11 @@ const Home = () => {
       <div className="bg-[#19a951] py-6 px-4 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-wide mb-3">
-            BUILT UPON {BRANDING.stats.yearsOfExperience} DECADES OF HARDWORK
+            BUILT UPON 10 YEARS OF EXCELLENCE
           </h2>
           <div className="flex flex-wrap justify-center gap-6 mt-2 text-sm md:text-base font-bold text-black/80">
             <span className="flex items-center gap-2"><Star className="w-5 h-5 fill-current" /> Unmatched Legacy</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5" /> Proven Results</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5" /> On a Mission to Educate 10 Million Students</span>
             <span className="flex items-center gap-2"><Shield className="w-5 h-5" /> Trusted by Parents</span>
           </div>
         </div>
@@ -400,7 +434,7 @@ const Home = () => {
                 </span> & Commitment
               </h1>
               <p className="text-lg md:text-xl text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                {BRANDING.name} has been the custodian of student success for over two decades. Join the league of champions today.
+                Quality Education from K–12 to Competitive Exams — Delivered with Purpose, Precision, and Personalization. Udaan for every Student's future success.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Button 
@@ -573,11 +607,12 @@ const Home = () => {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               { title: 'Classroom Programs', color: 'bg-[#0b3259]', img: IMAGES.programs.classroom, sub: 'For Class 6 to 12' },
               { title: 'Integrated School', color: 'bg-[#19a951]', img: IMAGES.programs.integrated, sub: 'School + Coaching' },
-              { title: 'Rank Improvement', color: 'bg-[#0b3259]', img: IMAGES.programs.crash, sub: 'Crash Courses' }
+              { title: 'Rank Improvement', color: 'bg-[#0b3259]', img: IMAGES.programs.crash, sub: 'Crash Courses' },
+              { title: 'Droppers Program', color: 'bg-[#19a951]', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80', sub: 'For NEET & JEE Aspirants • Duration: 3 Months' }
             ].map((p, i) => (
               <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer h-full flex flex-col" onClick={() => navigate('/programs')}>
                 <div className="h-48 overflow-hidden relative">
@@ -603,7 +638,7 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-black text-black mb-2">
-                {BRANDING.name} eSchool
+                Elite Academy eSchool
               </h2>
               <p className="text-black/80 font-bold text-lg">
                 Bringing the classroom experience to your home. Live Interactive Classes.
@@ -720,16 +755,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 9: myPAT Section */}
+      {/* SECTION 9: Prayozan Section */}
       <section className="bg-[#0E312C] py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold mb-6">myPAT</h2>
-            <p className="text-lg text-white/90 mb-8 leading-relaxed">
-              myPAT® is India's Largest Online Learning and Assessment Platform for various schools and competitive exams. It was 
-              handcrafted to offer highly personalized mentorship to every child by leveraging the power of technology. By understanding 
-              that every child learns differently, myPAT® empowers every student to learn the way they want.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Prayozan</h2>
+            <div className="text-lg text-white/90 mb-8 leading-relaxed space-y-4">
+              <p>
+                Prayozan is India's leading education enterprise dedicated to transforming how students learn, grow, and achieve success. From K-12 students and aspirants of India's toughest competitive exams, including <strong className="text-[#19a951]">JEE</strong>, <strong className="text-[#19a951]">NEET</strong>, <strong className="text-[#19a951]">IIT</strong>, <strong className="text-[#19a951]">UPSC</strong>, <strong className="text-[#19a951]">Olympiads</strong>, and more to create a learning experience that is personal, engaging, and impactful.
+              </p>
+              <p>
+                Our team consists of experienced educators from IITs, NITs, AIIMS, and top universities who bring deep subject expertise and student-centered teaching methodologies.
+              </p>
+            </div>
             <Button className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] rounded-full px-8 py-6 font-bold text-lg shadow-lg">
               Know More
             </Button>
@@ -737,11 +775,54 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SECTION 9.5: School Programs (New) */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+              Structured Curriculum for Every Stage
+            </h2>
+            <div className="h-1.5 w-24 bg-[#0b3259] rounded-full mx-auto"></div>
+          </div>
+
+          <div className="flex flex-col items-center">
+            {/* Tabs */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {Object.keys(schoolProgramsData).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveProgramTab(tab)}
+                  className={`px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 ${
+                    activeProgramTab === tab
+                      ? 'bg-[#0b3259] text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            {/* Content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl">
+              {schoolProgramsData[activeProgramTab].map((item: any, idx: number) => (
+                <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col items-center text-center group">
+                  <div className="w-16 h-16 bg-[#E8E1DD] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#19a951] transition-colors duration-300">
+                    <item.icon className="w-8 h-8 text-[#0b3259]" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{item.subject}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 10: The Ever-Growing World */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">
-            The Ever-Growing World Of {BRANDING.name}
+            The Ever-Growing World Of Prayozan
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -778,20 +859,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* SECTION 11: Quote & Footer Top */}
-      <div className="bg-[#0b3259] text-white py-16 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <blockquote className="text-xl md:text-2xl font-medium italic mb-8 text-white/90 leading-relaxed">
-            "{BRANDING.name}'s journey from just an IIT-JEE Coaching Institute to the most powerful brand 
-            in serious education has been exhilarating. But for us at {BRANDING.name}, the journey will never 
-            be over... for us, this journey itself is the destination."
-          </blockquote>
-          <div className="font-bold text-lg">~ D.K. GOEL</div>
-          <div className="text-sm text-white/70 mt-1 font-medium tracking-widest uppercase">CHAIRMAN & CHIEF MENTOR - {BRANDING.name} GROUP</div>
-        </div>
-      </div>
+      </section> */}
 
       <Footer />
     </div>

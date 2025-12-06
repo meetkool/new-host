@@ -106,41 +106,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Middle Footer: Programs List (Divider) */}
-        <div className="border-t border-gray-800 pt-8 mb-8">
-          <h4 className="text-[#19a951] font-bold uppercase tracking-wider mb-4 text-xs">Classroom Programs</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-gray-500">
-            <a href="#" className="hover:text-white">Little Genie One Year Foundation Program (Class VI)</a>
-            <a href="#" className="hover:text-white">Udaya Two Year Classroom Program (Class VII)</a>
-            <a href="#" className="hover:text-white">Four Year Classroom Program for JEE Advanced (Class IX)</a>
-            <a href="#" className="hover:text-white">Three Year Classroom Program for JEE Advanced (Class X)</a>
-            <a href="#" className="hover:text-white">Two Year Classroom Program for JEE Advanced (Class XI)</a>
-            <a href="#" className="hover:text-white">One Year Classroom Program for JEE Advanced (Class XII)</a>
-            <a href="#" className="hover:text-white">Special Weekend Classroom Program</a>
-            <a href="#" className="hover:text-white">Crash Courses for JEE Main & Advanced</a>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 pt-8 mb-8">
-          <h4 className="text-[#19a951] font-bold uppercase tracking-wider mb-4 text-xs">Integrated Programs</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-gray-500">
-            <a href="#" className="hover:text-white">SUPREME Four Year Integrated School Program</a>
-            <a href="#" className="hover:text-white">RAMANUJAN Four Year Integrated Program</a>
-            <a href="#" className="hover:text-white">PINNACLE Two Year Integrated School Program</a>
-            <a href="#" className="hover:text-white">PANINI Two Year Integrated Program</a>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 pt-8 mb-8">
-          <h4 className="text-[#19a951] font-bold uppercase tracking-wider mb-4 text-xs">Non-Classroom Programs</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-gray-500">
-            <a href="#" className="hover:text-white">Junior Rankers Study Material</a>
-            <a href="#" className="hover:text-white">Rankers Study Material (RSM)</a>
-            <a href="#" className="hover:text-white">All India Test Series (AITS)</a>
-            <a href="#" className="hover:text-white">Grand Masters Package (GMP)</a>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <div className="mb-4 md:mb-0">
