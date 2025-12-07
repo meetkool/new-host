@@ -479,44 +479,106 @@ const Home = () => {
               </div>
             </CarouselItem>
             
-            {/* Second Slide - Device Mockup */}
+            {/* Second Slide - Areas of Focus with Device Mockup */}
             <CarouselItem>
-              <div className="max-w-7xl mx-auto h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center relative overflow-hidden px-4">
+              <div className="max-w-7xl mx-auto min-h-[500px] md:h-[600px] flex items-center justify-center relative overflow-hidden px-4 py-8">
                 
-                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
-                   {/* Mobile Text - Visible only on mobile */}
-                   <div className="md:hidden text-center mb-8 relative z-20">
-                      <h2 className="text-3xl font-black text-white mb-2">Learn Anywhere</h2>
-                      <p className="text-white/80 font-medium text-lg">Your classroom in your pocket</p>
-                   </div>
-
-                   {/* Laptop - Visible on all screens, responsive width */}
-                   <div className="relative z-10 w-full max-w-[400px] lg:max-w-[600px] xl:max-w-[900px]">
-                      {/* Laptop Image Frame */}
-                      <img src="/images/laptop.png" alt="Laptop Frame" className="w-full relative z-10" />
+                <div className="relative z-10 w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                   
+                   {/* Left Side - Text Content */}
+                   <div className="relative bg-white rounded-[2rem] p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50 overflow-hidden">
+                      {/* Decorative accent */}
+                      <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#19a951] via-[#0b3259] to-[#19a951] rounded-l-[2rem]"></div>
                       
-                      {/* Laptop Screen Content - z-index higher to sit ON TOP of the laptop white area */}
-                      <div className="absolute top-[10%] left-[11.2%] w-[76%] h-[72%] z-30 overflow-hidden flex items-center justify-center">
-                         <img src="/images/certificate.png" alt="Certificate" className="w-full h-full object-cover" />
+                      {/* Title with elegant styling */}
+                      <div className="mb-10 pl-4">
+                        <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] leading-tight font-serif italic text-[#0b3259] tracking-tight">
+                          Areas where we Focus
+                        </h2>
+                        <div className="w-16 h-1 bg-[#19a951] mt-4 rounded-full"></div>
+                      </div>
+                      
+                      {/* Focus areas with refined styling */}
+                      <ul className="space-y-4 mb-10 pl-4">
+                        {[
+                          { text: "K–12 School Learning", sub: "(Classes 1–12)" },
+                          { text: "JEE", sub: "(Main & Advanced)" },
+                          { text: "NEET", sub: "(UG)" },
+                          { text: "UPSC / Civil Services", sub: "Foundation" },
+                          { text: "Olympiads & NTSE", sub: "" },
+                          { text: "Skill Development", sub: "for Students" }
+                        ].map((item, idx) => (
+                          <li key={idx} className="flex items-center gap-4 group">
+                            <span className="w-2.5 h-2.5 bg-[#19a951] rounded-full shrink-0 group-hover:scale-125 transition-transform duration-300"></span>
+                            <span className="text-base md:text-lg text-gray-800 font-medium">
+                              {item.text}
+                              {item.sub && <span className="text-gray-500 font-normal ml-1">{item.sub}</span>}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      {/* Faculties From Section - Refined */}
+                      <div className="border-t-2 border-gray-100 pt-8 pl-4">
+                        <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Faculties from</h3>
+                        <div className="flex flex-wrap items-end gap-5 md:gap-8">
+                          {/* IIT Bombay */}
+                          <div className="flex flex-col items-center group cursor-pointer">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
+                              <img src="/images/iitb.png" alt="IIT Bombay" className="w-full h-full object-contain" />
+                            </div>
+                            <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIT,B</span>
+                          </div>
+                          {/* IIT Delhi */}
+                          <div className="flex flex-col items-center group cursor-pointer">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
+                              <img src="/images/iitd.png" alt="IIT Delhi" className="w-full h-full object-contain" />
+                            </div>
+                            <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIT,D</span>
+                          </div>
+                          {/* IIITL */}
+                          <div className="flex flex-col items-center group cursor-pointer">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
+                              <img src="/images/IIITl.png" alt="IIITL" className="w-full h-full object-contain" />
+                            </div>
+                            <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIITL</span>
+                          </div>
+                          {/* KOTA */}
+                          <div className="flex flex-col items-center group cursor-pointer">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+                              <span className="text-sm font-black text-white tracking-widest">KOTA</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                    </div>
 
-                   {/* Tablet (Left) - Hidden on mobile */}
-                   <div className="hidden md:block absolute bottom-8 sm:bottom-4 md:-bottom-4 left-1/2 sm:left-4 md:left-8 lg:left-20 z-30 transform -translate-x-[70%] sm:-translate-x-0 -rotate-6 hover:rotate-0 transition-transform duration-500">
-                      <div className="bg-black p-2 sm:p-3 rounded-[1rem] sm:rounded-[1.5rem] shadow-2xl w-[180px] sm:w-[220px] md:w-[250px] lg:w-[280px]">
-                         <div className="bg-gray-800 rounded-lg sm:rounded-xl overflow-hidden aspect-[3/4] border border-gray-700 relative">
-                            {/* Camera dot */}
-                            <div className="absolute top-1.5 sm:top-2 left-1/2 -translate-x-1/2 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-black/50 rounded-full z-10"></div>
-                            <img src="/images/6.png" alt="Award Ceremony" className="w-full h-full object-cover" />
-                         </div>
+                   {/* Right Side - Device Mockups */}
+                   <div className="relative h-[350px] md:h-[450px] lg:h-[500px]">
+                      
+                      {/* Laptop - Main device at top */}
+                      <div className="absolute top-0 right-0 w-[85%] md:w-[90%] z-10">
+                        <div className="relative">
+                          <img src="/images/laptop.png" alt="Laptop Frame" className="w-full relative z-10 drop-shadow-2xl" />
+                          <div className="absolute top-[10%] left-[11.2%] w-[76%] h-[72%] z-20 overflow-hidden flex items-center justify-center rounded-sm">
+                            <img src="/images/certificate.png" alt="Certificate" className="w-full h-full object-cover" />
+                          </div>
+                        </div>
                       </div>
-                   </div>
 
-                   {/* Phone (Right) - Hidden on mobile */}
-                   <div className="hidden md:block absolute bottom-12 sm:bottom-4 md:-bottom-8 right-1/2 sm:right-4 md:right-16 lg:right-32 z-40 transform translate-x-[70%] sm:translate-x-0 rotate-6 hover:rotate-0 transition-transform duration-500">
-                      <div className="relative w-[100px] sm:w-[120px] md:w-[140px] lg:w-[160px]">
-                         {/* Phone Frame - on top */}
-                         <img src="/images/phone.png" alt="Phone Frame" className="w-full relative z-30 rounded-[1rem] sm:rounded-[1.5rem]" />
+                      {/* Tablet - Bottom left, overlapping laptop */}
+                      <div className="absolute bottom-0 left-0 w-[45%] md:w-[40%] z-30 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div className="bg-gray-900 p-2 md:p-3 rounded-xl md:rounded-2xl shadow-2xl">
+                          <div className="bg-gray-800 rounded-lg overflow-hidden aspect-[4/5] relative border border-gray-700">
+                            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-black/30 rounded-full z-10"></div>
+                            <img src="/images/tykknb.jpeg" alt="Award Ceremony" className="w-full h-full object-cover" />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Phone - Bottom right, overlapping laptop */}
+                      <div className="absolute bottom-4 right-0 w-[25%] md:w-[22%] z-40 transform rotate-6 hover:rotate-0 transition-transform duration-500">
+                        <img src="/images/phone.png" alt="Phone" className="w-full drop-shadow-2xl rounded-[1.3rem]" />
                       </div>
                    </div>
                 </div>
