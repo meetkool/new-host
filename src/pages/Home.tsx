@@ -367,9 +367,9 @@ const Home = () => {
   };
 
   const toppers = [
-    { rank: 37, name: 'Rohan Gupta', program: '2 Year Classroom', img: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop' },
-    { rank: 45, name: 'Aditya Kumar', program: '4 Year Integrated', img: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop' },
-    { rank: 50, name: 'Sneha Sharma', program: '2 Year Classroom', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop' }
+    { rank: 37, name: 'Rohan Gupta', program: '2 Year Classroom', img: '/images/2.png' },
+    { rank: 45, name: 'Aditya Kumar', program: '4 Year Integrated', img: '/images/3.png' },
+    { rank: 50, name: 'Sneha Sharma', program: '2 Year Classroom', img: '/images/4.png' }
   ];
 
   const usps = [
@@ -402,10 +402,10 @@ const Home = () => {
       {/* SECTION 1: TOP BANNER (Yellow) */}
       <div className="bg-[#19a951] py-6 px-4 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-wide mb-3">
+          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-wide mb-3">
             BUILT UPON 10 YEARS OF EXCELLENCE
           </h2>
-          <div className="flex flex-wrap justify-center gap-6 mt-2 text-sm md:text-base font-bold text-black/80">
+          <div className="flex flex-wrap justify-center gap-6 mt-2 text-sm md:text-base font-bold text-white/90">
             <span className="flex items-center gap-2"><Star className="w-5 h-5 fill-current" /> Unmatched Legacy</span>
             <span className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5" /> On a Mission to Educate 10 Million Students</span>
             <span className="flex items-center gap-2"><Shield className="w-5 h-5" /> Trusted by Parents</span>
@@ -418,62 +418,118 @@ const Home = () => {
         {/* Curve at bottom */}
         <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: "ellipse(70% 100% at 50% 100%)" }}></div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-8 text-center lg:text-left">
-              <Badge className="bg-[#19a951] text-black hover:bg-[#0E312C] border-none px-4 py-1.5 text-sm font-bold tracking-wider">
-                ADMISSIONS OPEN 2025-26
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-black leading-tight">
-                A Legacy of <br/>
-                <span className="text-[#19a951] relative">
-                  Excellence
-                  <svg className="absolute w-full h-3 -bottom-1 left-0 text-white opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                  </svg>
-                </span> & Commitment
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                Quality Education from K–12 to Competitive Exams — Delivered with Purpose, Precision, and Personalization. Udaan for every Student's future success.
-              </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <Button 
-                  className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-all transform hover:scale-105"
-                  onClick={() => navigate('/programs')}
-                >
-                  Enroll Now
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full hover:shadow-lg transition-all"
-                  onClick={() => navigate('/scholarship-test')}
-                >
-                  Scholarship Test
-                </Button>
-              </div>
-            </div>
-
-            {/* Topper Cards (Floating) */}
-            <div className="relative mt-8 lg:mt-0">
-              <div className="flex justify-center items-end gap-4 md:gap-6">
-                {toppers.map((t, i) => (
-                  <div key={i} className={`bg-white p-3 rounded-xl shadow-2xl transform transition-transform hover:-translate-y-2 duration-300 ${i === 1 ? 'mb-12 scale-110 z-10' : 'opacity-90'}`}>
-                    <div className="relative">
-                      <img src={t.img} alt={t.name} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg mx-auto mb-3 border-4 border-[#19a951]" />
-                      <div className="absolute -top-3 -right-3 bg-[#0b3259] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-xs md:text-sm shadow-md border-2 border-white">
-                        {t.rank}
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xl md:text-2xl font-black text-[#0b3259]">AIR {t.rank}</div>
-                      <div className="font-bold text-gray-900 text-xs md:text-sm line-clamp-1">{t.name}</div>
+        <Carousel setApi={setCarouselApi} className="w-full relative z-10" opts={{ loop: true }}>
+          <CarouselContent>
+            <CarouselItem>
+              <div className="max-w-7xl mx-auto px-4">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  <div className="text-white space-y-8 text-center lg:text-left">
+                    <Badge className="bg-[#19a951] text-black hover:bg-[#0E312C] border-none px-4 py-1.5 text-sm font-bold tracking-wider">
+                      ADMISSIONS OPEN 2025-26
+                    </Badge>
+                    <h1 className="text-4xl md:text-6xl font-black leading-tight">
+                      A Legacy of <br/>
+                      <span className="text-[#19a951] relative">
+                        Excellence
+                        <svg className="absolute w-full h-3 -bottom-1 left-0 text-white opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                          <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                        </svg>
+                      </span> & Commitment
+                    </h1>
+                    <p className="text-lg md:text-xl text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                      Quality Education from K–12 to Competitive Exams — Delivered with Purpose, Precision, and Personalization. Udaan for every Student's future success.
+                    </p>
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                      <Button 
+                        className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-all transform hover:scale-105"
+                        onClick={() => navigate('/programs')}
+                      >
+                        Enroll Now
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full hover:shadow-lg transition-all"
+                        onClick={() => navigate('/scholarship-test')}
+                      >
+                        Scholarship Test
+                      </Button>
                     </div>
                   </div>
-                ))}
+
+                  {/* Topper Cards (Floating) */}
+                  <div className="relative mt-8 lg:mt-0">
+                    <div className="flex justify-center items-end gap-4 md:gap-6">
+                      {toppers.map((t, i) => (
+                        <div key={i} className={`bg-white p-3 rounded-xl shadow-2xl transform transition-transform hover:-translate-y-2 duration-300 ${i === 1 ? 'mb-12 scale-110 z-10' : 'opacity-90'}`}>
+                          <div className="relative">
+                            <img src={t.img} alt={t.name} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg mx-auto mb-3 border-4 border-[#19a951]" />
+                            <div className="absolute -top-3 -right-3 bg-[#0b3259] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-xs md:text-sm shadow-md border-2 border-white">
+                              {t.rank}
+                            </div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-xl md:text-2xl font-black text-[#0b3259]">AIR {t.rank}</div>
+                            <div className="font-bold text-gray-900 text-xs md:text-sm line-clamp-1">{t.name}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </CarouselItem>
+            
+            {/* Second Slide - Device Mockup */}
+            <CarouselItem>
+              <div className="max-w-7xl mx-auto h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center relative overflow-hidden px-4">
+                
+                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+                   {/* Mobile Text - Visible only on mobile */}
+                   <div className="md:hidden text-center mb-8 relative z-20">
+                      <h2 className="text-3xl font-black text-white mb-2">Learn Anywhere</h2>
+                      <p className="text-white/80 font-medium text-lg">Your classroom in your pocket</p>
+                   </div>
+
+                   {/* Laptop - Visible on all screens, responsive width */}
+                   <div className="relative z-10 w-full max-w-[400px] lg:max-w-[600px] xl:max-w-[900px]">
+                      {/* Laptop Image Frame */}
+                      <img src="/images/laptop.png" alt="Laptop Frame" className="w-full relative z-10" />
+                      
+                      {/* Laptop Screen Content - z-index higher to sit ON TOP of the laptop white area */}
+                      <div className="absolute top-[10%] left-[11.2%] w-[76%] h-[72%] z-30 overflow-hidden flex items-center justify-center">
+                         <img src="/images/certificate.png" alt="Certificate" className="w-full h-full object-cover" />
+                      </div>
+                   </div>
+
+                   {/* Tablet (Left) - Hidden on mobile */}
+                   <div className="hidden md:block absolute bottom-8 sm:bottom-4 md:-bottom-4 left-1/2 sm:left-4 md:left-8 lg:left-20 z-30 transform -translate-x-[70%] sm:-translate-x-0 -rotate-6 hover:rotate-0 transition-transform duration-500">
+                      <div className="bg-black p-2 sm:p-3 rounded-[1rem] sm:rounded-[1.5rem] shadow-2xl w-[180px] sm:w-[220px] md:w-[250px] lg:w-[280px]">
+                         <div className="bg-gray-800 rounded-lg sm:rounded-xl overflow-hidden aspect-[3/4] border border-gray-700 relative">
+                            {/* Camera dot */}
+                            <div className="absolute top-1.5 sm:top-2 left-1/2 -translate-x-1/2 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-black/50 rounded-full z-10"></div>
+                            <img src="/images/6.png" alt="Award Ceremony" className="w-full h-full object-cover" />
+                         </div>
+                      </div>
+                   </div>
+
+                   {/* Phone (Right) - Hidden on mobile */}
+                   <div className="hidden md:block absolute bottom-12 sm:bottom-4 md:-bottom-8 right-1/2 sm:right-4 md:right-16 lg:right-32 z-40 transform translate-x-[70%] sm:translate-x-0 rotate-6 hover:rotate-0 transition-transform duration-500">
+                      <div className="relative w-[100px] sm:w-[120px] md:w-[140px] lg:w-[160px]">
+                         {/* Phone Frame - on top */}
+                         <img src="/images/phone.png" alt="Phone Frame" className="w-full relative z-30 rounded-[1rem] sm:rounded-[1.5rem]" />
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <div className="absolute top-1/2 left-4 md:left-12 z-20 hidden md:block">
+            <CarouselPrevious className="bg-white/10 hover:bg-white/20 border-white/20 text-white" />
           </div>
-        </div>
+          <div className="absolute top-1/2 right-4 md:right-12 z-20 hidden md:block">
+            <CarouselNext className="bg-white/10 hover:bg-white/20 border-white/20 text-white" />
+          </div>
+        </Carousel>
       </div>
 
       {/* SECTION 3: TRAILBLAZERS (New Tabbed Section) */}
@@ -609,10 +665,10 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title: 'Classroom Programs', color: 'bg-[#0b3259]', img: IMAGES.programs.classroom, sub: 'For Class 6 to 12' },
-              { title: 'Integrated School', color: 'bg-[#19a951]', img: IMAGES.programs.integrated, sub: 'School + Coaching' },
-              { title: 'Rank Improvement', color: 'bg-[#0b3259]', img: IMAGES.programs.crash, sub: 'Crash Courses' },
-              { title: 'Droppers Program', color: 'bg-[#19a951]', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80', sub: 'For NEET & JEE Aspirants • Duration: 3 Months' }
+              { title: 'Classroom Programs', color: 'bg-[#0b3259]', img: '/images/Programs-4.jpeg', sub: 'For Class 6 to 12' },
+              { title: 'Integrated School', color: 'bg-[#19a951]', img: '/images/nbn.jpeg', sub: 'School + Coaching' },
+              { title: 'Rank Improvement', color: 'bg-[#0b3259]', img: '/images/Programs-2.jpeg', sub: 'Crash Courses' },
+              { title: 'Droppers Program', color: 'bg-[#19a951]', img: '/images/Programs_3.jpeg', sub: 'For NEET & JEE Aspirants • Duration: 3 Months' }
             ].map((p, i) => (
               <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer h-full flex flex-col" onClick={() => navigate('/programs')}>
                 <div className="h-48 overflow-hidden relative">
@@ -758,19 +814,30 @@ const Home = () => {
       {/* SECTION 9: Prayozan Section */}
       <section className="bg-[#0E312C] py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold mb-6">Prayozan</h2>
-            <div className="text-lg text-white/90 mb-8 leading-relaxed space-y-4">
-              <p>
-                Prayozan is India's leading education enterprise dedicated to transforming how students learn, grow, and achieve success. From K-12 students and aspirants of India's toughest competitive exams, including <strong className="text-[#19a951]">JEE</strong>, <strong className="text-[#19a951]">NEET</strong>, <strong className="text-[#19a951]">IIT</strong>, <strong className="text-[#19a951]">UPSC</strong>, <strong className="text-[#19a951]">Olympiads</strong>, and more to create a learning experience that is personal, engaging, and impactful.
-              </p>
-              <p>
-                Our team consists of experienced educators from IITs, NITs, AIIMS, and top universities who bring deep subject expertise and student-centered teaching methodologies.
-              </p>
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">Prayozan</h2>
+              <div className="text-lg text-white/90 mb-8 leading-relaxed space-y-4">
+                <p>
+                  Prayozan is India's leading education enterprise dedicated to transforming how students learn, grow, and achieve success. From K-12 students and aspirants of India's toughest competitive exams, including <strong className="text-[#19a951]">JEE</strong>, <strong className="text-[#19a951]">NEET</strong>, <strong className="text-[#19a951]">IIT</strong>, <strong className="text-[#19a951]">UPSC</strong>, <strong className="text-[#19a951]">Olympiads</strong>, and more to create a learning experience that is personal, engaging, and impactful.
+                </p>
+                <p>
+                  Our team consists of experienced educators from IITs, NITs, AIIMS, and top universities who bring deep subject expertise and student-centered teaching methodologies.
+                </p>
+              </div>
+              <Button className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] rounded-full px-8 py-6 font-bold text-lg shadow-lg">
+                Know More
+              </Button>
             </div>
-            <Button className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] rounded-full px-8 py-6 font-bold text-lg shadow-lg">
-              Know More
-            </Button>
+            
+            <div className="md:w-1/2 relative">
+               <div className="absolute inset-0 bg-[#19a951]/20 rounded-lg transform rotate-3 scale-105"></div>
+               <img 
+                 src="/images/tykknb.jpeg" 
+                 alt="Prayozan Team" 
+                 className="relative rounded-lg shadow-2xl w-full object-cover border-4 border-[#19a951]/30"
+               />
+            </div>
           </div>
         </div>
       </section>
