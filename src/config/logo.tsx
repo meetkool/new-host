@@ -24,7 +24,7 @@ export const logoConfig: LogoConfig = {
   // Image Configuration (L2H Logo)
   imageUrl: '/images/prayzan_logojpeg.jpeg',
   imageAlt: 'Prayozan School of Success',
-  width: '150px',
+  width: '200px',
   height: 'auto',
   linkClassName: 'flex items-center hover-scale transition-all duration-300',
 
