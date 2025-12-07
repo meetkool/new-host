@@ -16,28 +16,28 @@ const Navigation = () => {
   // Smart scroll behavior - hide on scroll down, show on scroll up
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
-    
+
     const handleScroll = () => {
       // Throttle scroll events for better performance
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
         const currentScrollY = window.scrollY;
-        
+
         // Show navbar if at top of page
         if (currentScrollY < 10) {
           setIsVisible(true);
-        } 
+        }
         // Show navbar when scrolling up (with minimum threshold to avoid jittery behavior)
         else if (currentScrollY < lastScrollY - 5) {
           setIsVisible(true);
-        } 
+        }
         // Hide navbar when scrolling down (only if scrolled past initial section)
         else if (currentScrollY > lastScrollY + 5 && currentScrollY > 100) {
           setIsVisible(false);
           setIsProgramsOpen(false); // Close dropdown when hiding
           setIsMenuOpen(false); // Close mobile menu when hiding
         }
-        
+
         setLastScrollY(currentScrollY);
       }, 10); // 10ms throttle
     };
@@ -54,8 +54,8 @@ const Navigation = () => {
       title: "CLASSROOM PROGRAMS",
       path: "/programs/classroom",
       items: [
-        "Class VI", "Class VII", "Class VIII", "Class IX", "Class X", 
-        "Class XI", "Class XII", "Class XII Pass", 
+        "Class VI", "Class VII", "Class VIII", "Class IX", "Class X",
+        "Class XI", "Class XII", "Class XII Pass",
         "Crash Courses For JEE Main & Advanced"
       ]
     },
@@ -65,16 +65,15 @@ const Navigation = () => {
       items: ["Class IX", "Class XI"]
     },
     {
-      title: "NON CLASSROOM PROGRAMS", 
+      title: "NON CLASSROOM PROGRAMS",
       path: "/programs/online",
       items: ["Class IX", "Class X", "Class XI", "Class XII", "Class XII Pass"]
     }
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border transition-transform duration-300 ease-in-out ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <nav className={`fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -84,9 +83,8 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
-              className={`font-bold transition-smooth ${
-                isActive('/') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-              }`}
+              className={`font-bold transition-smooth ${isActive('/') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
             >
               Home
             </Link>
@@ -95,9 +93,8 @@ const Navigation = () => {
             <div className="relative group">
               <button
                 onClick={() => setIsProgramsOpen(!isProgramsOpen)}
-                className={`flex items-center space-x-1 font-bold transition-smooth ${
-                  location.pathname.startsWith('/programs') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-                }`}
+                className={`flex items-center space-x-1 font-bold transition-smooth ${location.pathname.startsWith('/programs') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                  }`}
               >
                 <span>Programs</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${isProgramsOpen ? 'rotate-180' : ''}`} />
@@ -107,84 +104,81 @@ const Navigation = () => {
                 <>
                   {/* Backdrop to close on click outside */}
                   <div className="fixed inset-0 z-40 bg-transparent" onClick={() => setIsProgramsOpen(false)}></div>
-                  
+
                   {/* Mega Menu - Fixed positioning to ensure responsiveness and centering on viewport */}
                   <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-[95vw] max-w-[1000px] z-50 px-4">
                     <div className="bg-white border border-border rounded-b-xl shadow-2xl p-6 md:p-8">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      {megaMenuData.map((section, index) => (
-                        <div key={index} className="space-y-4 border-r last:border-r-0 border-gray-100 pr-4">
-                    <Link
-                            to={section.path}
-                            className="flex items-center justify-between text-[#0b3259] font-bold text-sm tracking-wider hover:text-[#19a951] uppercase mb-4"
-                            onClick={() => setIsProgramsOpen(false)}
-                    >
-                            {section.title}
-                            <ChevronRight className="w-4 h-4" />
-                    </Link>
-                          <ul className="space-y-3">
-                            {section.items.map((item, idx) => (
-                              <li key={idx}>
-                  <Link
-                                  to={`${section.path}?class=${item.replace(/\s+/g, '-').toLowerCase()}`}
-                                  className="text-gray-600 hover:text-[#0b3259] text-sm font-medium transition-colors block py-1"
-                                  onClick={() => setIsProgramsOpen(false)}
-                  >
-                                  {item}
-                  </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                        {megaMenuData.map((section, index) => (
+                          <div key={index} className="space-y-4 border-r last:border-r-0 border-gray-100 pr-4">
+                            <Link
+                              to={section.path}
+                              className="flex items-center justify-between text-[#0b3259] font-bold text-sm tracking-wider hover:text-[#19a951] uppercase mb-4"
+                              onClick={() => setIsProgramsOpen(false)}
+                            >
+                              {section.title}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                            <ul className="space-y-3">
+                              {section.items.map((item, idx) => (
+                                <li key={idx}>
+                                  <Link
+                                    to={`${section.path}?class=${item.replace(/\s+/g, '-').toLowerCase()}`}
+                                    className="text-gray-600 hover:text-[#0b3259] text-sm font-medium transition-colors block py-1"
+                                    onClick={() => setIsProgramsOpen(false)}
+                                  >
+                                    {item}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
                 </>
               )}
             </div>
 
+
+
             <Link
-              to="/school-programs"
-              className={`font-bold transition-smooth ${
-                isActive('/school-programs') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-              }`}
+              to="/ebooks"
+              className={`font-bold transition-smooth ${isActive('/ebooks') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
             >
-              School Programs
+              Ebooks
             </Link>
 
             <Link
               to="/test-series"
-              className={`font-bold transition-smooth ${
-                isActive('/test-series') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-              }`}
+              className={`font-bold transition-smooth ${isActive('/test-series') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
             >
               Test Series
             </Link>
 
             <Link
               to="/results"
-              className={`font-bold transition-smooth ${
-                isActive('/results') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-              }`}
+              className={`font-bold transition-smooth ${isActive('/results') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
             >
               Results
             </Link>
 
             <Link
               to="/faculty"
-              className={`font-bold transition-smooth ${
-                isActive('/faculty') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-              }`}
+              className={`font-bold transition-smooth ${isActive('/faculty') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
             >
               Faculty
             </Link>
 
             <Link
               to="/about-us"
-              className={`font-bold transition-smooth ${
-                isActive('/about-us') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
-              }`}
+              className={`font-bold transition-smooth ${isActive('/about-us') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
             >
               About Us
             </Link>
@@ -192,7 +186,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button 
+            <Button
               variant="outline"
               size="sm"
               className="border-[#0b3259] text-[#0b3259] hover:bg-[#0b3259] hover:text-white font-bold"
@@ -200,8 +194,8 @@ const Navigation = () => {
             >
               Student Login
             </Button>
-            <Button 
-              variant="default" 
+            <Button
+              variant="default"
               size="lg"
               className="bg-[#0b3259] text-white hover:bg-[#19a951] font-bold"
               onClick={() => window.location.href = '/scholarship-test'}
@@ -227,7 +221,7 @@ const Navigation = () => {
               <Link to="/" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                 Home
               </Link>
-              
+
               {/* Mobile Programs Accordion */}
               <div className="space-y-2">
                 <div className="font-medium py-2 text-primary">Programs</div>
@@ -244,7 +238,7 @@ const Navigation = () => {
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {item}
-              </Link>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -252,6 +246,10 @@ const Navigation = () => {
                   ))}
                 </div>
               </div>
+
+              <Link to="/ebooks" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+                Ebooks
+              </Link>
 
               <Link to="/test-series" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                 Test Series
@@ -268,9 +266,9 @@ const Navigation = () => {
               <Link to="/student/login" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                 Student Login
               </Link>
-              <Button 
-                variant="hero" 
-                size="lg" 
+              <Button
+                variant="hero"
+                size="lg"
                 className="mt-4"
                 onClick={() => {
                   window.location.href = '/scholarship-test';

@@ -26,7 +26,7 @@ export default function Ebooks() {
   // Configure Fuse.js for fuzzy search
   const fuse = useMemo(() => {
     if (!ebooksData?.data) return null;
-    
+
     return new Fuse(ebooksData.data, {
       keys: [
         { name: 'name', weight: 2 },
@@ -45,7 +45,7 @@ export default function Ebooks() {
   // Perform fuzzy search
   const searchResults = useMemo(() => {
     if (!ebooksData?.data) return [];
-    
+
     if (!searchQuery.trim()) {
       return ebooksData.data;
     }
@@ -82,237 +82,144 @@ export default function Ebooks() {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="bg-white py-8 lg:py-8 relative overflow-hidden">
-        <div className="relative w-full max-w-7xl mx-auto">
-          {/* Mobile Layout - Image with overlay text */}
-          <div className="lg:hidden relative w-full h-[500px]">
-            {/* Background Image */}
-            <img 
-              src="/images/collage.jpg" 
-              alt="Free Ebooks - Professional resources" 
-              className="absolute inset-0 w-full h-full object-cover object-top"
-            />
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
-            {/* White fade at bottom - increased height */}
-            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
-            
-            {/* Content overlay */}
-            <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-12 text-white">
-              <h1 className="text-3xl font-bold mb-6 leading-tight">
-                Free Ebooks
-              </h1>
-              
-              {/* Feature List */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium">
-                    <span className="font-semibold">100+</span> Free ebooks to download
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium">
-                    <span className="font-semibold">Instant</span> Download - No OTP required
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium">
-                    <span className="font-semibold">Expert</span> Content & resources
-                  </span>
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col gap-3">
-                <Button 
-                  className="bg-[#0b3259] hover:bg-[#0b3259]/90 text-white px-6 py-3 text-base font-semibold rounded-lg shadow-lg transition-all duration-200"
-                  onClick={() => {
-                    const ebookSection = document.querySelector('#ebooks-section');
-                    ebookSection?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  Browse Ebooks
-                </Button>
-                <Button 
-                  className="bg-white text-[#0b3259] hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-all duration-200 border-2 border-[#0b3259]"
-                >
-                  Learn More
-                </Button>
-              </div>
+      {/* Hero Section - Vercel Style */}
+      <section className="relative bg-white py-20 lg:py-28 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            {/* Badge - Minimal */}
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-6">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+              Free Resources
             </div>
-          </div>
 
-          {/* Desktop Layout - Side by side */}
-          <div className="hidden lg:block h-[500px] px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center h-full">
-              <div className="grid lg:grid-cols-2 gap-12 items-center h-full w-full">
-                {/* Left Content */}
-                <div className="space-y-8">
-                  <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    Free Ebooks
-                  </h1>
-                  
-                  {/* Feature List */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-lg text-gray-700">
-                        <span className="font-semibold">100+</span> Free ebooks to download
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-lg text-gray-700">
-                        <span className="font-semibold">Instant</span> Download - No OTP required
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-[#19a951] rounded-full flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-lg text-gray-700">
-                        <span className="font-semibold">Expert</span> Content & resources
-                      </span>
-                    </div>
-                  </div>
+            {/* Title - Clean typography */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight leading-[1.1] mb-6">
+              Free Ebooks for
+              <span className="block bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">Your Success</span>
+            </h1>
 
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      className="bg-[#0b3259] hover:bg-[#0b3259]/90 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl"
-                      onClick={() => {
-                        const ebookSection = document.querySelector('#ebooks-section');
-                        ebookSection?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                    >
-                      Browse Ebooks
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="border-2 border-[#0b3259] text-[#0b3259] hover:bg-[#0b3259] hover:text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-200"
-                    >
-                      Learn More
-                    </Button>
-                  </div>
-                </div>
+            {/* Subtitle */}
+            <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
+              Access high-quality study materials, expert guides, and comprehensive resources to accelerate your learning journey.
+            </p>
 
-                {/* Right Image */}
-                <div className="relative">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src="/images/collage.jpg" 
-                      alt="Free Ebooks - Professional resources" 
-                      className="w-[105%] h-[560px] object-cover image-edge-fade -ml-[2.5%] -mt-[20px] brightness-90"
-                    />
-                    {/* Optimized gradient overlays for seamless blending with white background */}
-                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[90%] via-transparent to-white/95"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-[10%] via-transparent to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/30"></div>
-                  </div>
-                </div>
+            {/* CTA Buttons - Vercel style */}
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <Button
+                className="h-12 px-6 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-lg transition-all"
+                onClick={() => {
+                  const ebookSection = document.querySelector('#ebooks-section');
+                  ebookSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Browse Ebooks
+              </Button>
+              <Button
+                variant="outline"
+                className="h-12 px-6 border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-900 text-sm font-medium rounded-lg transition-all"
+              >
+                Learn More
+              </Button>
+            </div>
+
+            {/* Stats - Minimal inline */}
+            <div className="flex justify-center gap-8 mt-12 text-sm">
+              <div className="text-center">
+                <div className="font-semibold text-gray-900">100+</div>
+                <div className="text-gray-400">Ebooks</div>
+              </div>
+              <div className="text-center">
+                <div className="font-semibold text-gray-900">Free</div>
+                <div className="text-gray-400">Downloads</div>
+              </div>
+              <div className="text-center">
+                <div className="font-semibold text-gray-900">Expert</div>
+                <div className="text-gray-400">Content</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Search Section */}
-      <section className="py-12 bg-muted/50">
+      {/* Search Section - Vercel Style */}
+      <section className="py-6 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col lg:flex-row gap-4 items-center">
-              {/* Search with Fuzzy Search */}
-              <div className="relative flex-1 max-w-2xl">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
-                <Input
-                  type="text"
-                  placeholder="Search ebooks by name, author, category, tags... (Fuzzy search enabled)"
-                  className="pl-10 pr-10 py-6 text-base"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                {searchQuery && (
-                  <button
-                    onClick={clearSearch}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                    title="Clear search"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                )}
-              </div>
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            {/* Search Input - Clean minimal */}
+            <div className="relative flex-1 w-full">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                type="text"
+                placeholder="Search ebooks..."
+                className="w-full pl-11 pr-10 py-3 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:border-gray-300 focus:ring-0 transition-all placeholder:text-gray-400"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <button
+                  onClick={clearSearch}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  title="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
-            
-            {/* Search Info */}
-            {searchQuery && (
-              <div className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">{searchResults.length}</span> results found for "{searchQuery}"
-              </div>
-            )}
           </div>
+
+          {/* Search Results Info */}
+          {searchQuery && (
+            <div className="mt-3 flex items-center gap-2">
+              <span className="text-sm text-gray-500">
+                <span className="font-medium text-gray-900">{searchResults.length}</span> results for "{searchQuery}"
+              </span>
+              <button
+                onClick={clearSearch}
+                className="text-sm text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                Clear
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-12" id="ebooks-section">
+      {/* Main Content - Vercel Style */}
+      <section className="py-12 bg-white" id="ebooks-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Stats & Pagination */}
+          {/* Header - Minimal */}
           {!isLoading && searchResults.length > 0 && (
-            <div className="mb-8">
-              <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="mb-10">
+              <div className="flex items-end justify-between flex-wrap gap-4">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">
-                    {searchQuery ? 'Search Results' : 'Available Ebooks'}
+                  <h2 className="text-2xl font-semibold text-gray-900 tracking-tight">
+                    {searchQuery ? 'Search Results' : 'Ebooks'}
                   </h2>
-                  <p className="text-muted-foreground">
-                    Showing {paginatedResults.length} of {searchResults.length} ebooks
-                    {searchQuery && ' matching your search'}
+                  <p className="text-sm text-gray-500 mt-1">
+                    {paginatedResults.length} of {searchResults.length} ebooks
                   </p>
                 </div>
-                
+
                 {totalPages > 1 && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <Button
-                      variant="outline"
+                      variant="ghost"
+                      size="sm"
                       disabled={currentPage === 1}
                       onClick={() => setCurrentPage((prev) => prev - 1)}
+                      className="h-9 px-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 disabled:opacity-40"
                     >
                       Previous
                     </Button>
-                    <span className="text-muted-foreground">
-                      Page {currentPage} of {totalPages}
+                    <span className="px-3 text-sm text-gray-400">
+                      {currentPage} / {totalPages}
                     </span>
                     <Button
-                      variant="outline"
+                      variant="ghost"
+                      size="sm"
                       disabled={currentPage === totalPages}
                       onClick={() => setCurrentPage((prev) => prev + 1)}
+                      className="h-9 px-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 disabled:opacity-40"
                     >
                       Next
                     </Button>
@@ -354,27 +261,35 @@ export default function Ebooks() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 gradient-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Download className="w-16 h-16 mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Notified of New Ebooks</h2>
-          <p className="text-xl mb-8 text-white/80">
-            Subscribe to our newsletter and be the first to know when we add new ebooks
+      {/* Newsletter CTA - Vercel Style */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-semibold text-gray-900 tracking-tight mb-3">
+            Stay updated
+          </h2>
+          <p className="text-gray-500 mb-8 max-w-lg mx-auto">
+            Subscribe to get notified when we add new ebooks and learning resources.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <div className="relative flex-1">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="pl-10 py-3 text-gray-900"
+              <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full pl-11 py-3 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:border-gray-300 focus:ring-0 transition-all"
               />
             </div>
-            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90">
+            <Button
+              className="h-[46px] px-6 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-lg transition-all"
+            >
               Subscribe
             </Button>
           </div>
+
+          <p className="text-xs text-gray-400 mt-4">
+            No spam. Unsubscribe anytime.
+          </p>
         </div>
       </section>
 

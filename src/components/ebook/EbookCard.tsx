@@ -1,9 +1,9 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Download, Eye, FileText } from 'lucide-react';
+import { Download, Eye, FileText, ArrowUpRight } from 'lucide-react';
 import type { Ebook } from '@/types/ebook';
 import { API_BASE_URL } from '@/config/api';
+import { motion } from 'framer-motion';
 
 interface EbookCardProps {
   ebook: Ebook;
@@ -17,86 +17,89 @@ export default function EbookCard({ ebook, onDownloadClick }: EbookCardProps) {
     : `${apiBaseUrl}/uploads/ebook/${ebook.image}`;
 
   return (
-    <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 group bg-white/90 backdrop-blur-sm">
-      {/* Image */}
-      <div className="relative h-64 overflow-hidden bg-gray-100">
-        <img
-          src={imageUrl}
-          alt={ebook.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = '/placeholder.svg';
-          }}
-        />
-        {ebook.featured && (
-          <Badge className="absolute top-2 right-2 bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg">
-            ⭐ Featured
-          </Badge>
-        )}
-        {ebook.category && (
-          <Badge className="absolute top-2 left-2 bg-purple-600 hover:bg-purple-700 text-white">
-            {ebook.category}
-          </Badge>
-        )}
-      </div>
+    <motion.div
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+    >
+      <Card className="group overflow-hidden bg-white border border-gray-200/80 hover:border-gray-300 rounded-xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+        {/* Image Container */}
+        <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+          <img
+            src={imageUrl}
+            alt={ebook.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = '/placeholder.svg';
+            }}
+          />
 
-      {/* Content */}
-      <CardContent className="p-6">
-        <h3 className="text-xl font-bold mb-2 line-clamp-2 min-h-[3.5rem] text-gray-900">
-          {ebook.name}
-        </h3>
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        {ebook.description && (
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2 min-h-[2.5rem]">
-            {ebook.description}
-          </p>
-        )}
-
-        {/* Meta Info */}
-        <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 flex-wrap">
-          {ebook.pageCount && (
-            <div className="flex items-center gap-1">
-              <FileText className="w-4 h-4" />
-              <span>{ebook.pageCount} pages</span>
+          {/* Category Tag - Minimal style */}
+          {ebook.category && (
+            <div className="absolute top-3 left-3">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-white/90 backdrop-blur-sm text-gray-700 shadow-sm">
+                {ebook.category}
+              </span>
             </div>
           )}
-          <div className="flex items-center gap-1" title="Downloads">
-            <Download className="w-4 h-4" />
-            <span>{ebook.downloadCount || 0}</span>
-          </div>
-          <div className="flex items-center gap-1" title="Views">
-            <Eye className="w-4 h-4" />
-            <span>{ebook.viewCount || 0}</span>
-          </div>
+
+          {/* Featured indicator */}
+          {ebook.featured && (
+            <div className="absolute top-3 right-3">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#19a951] text-white shadow-sm">
+                Featured
+              </span>
+            </div>
+          )}
         </div>
 
-        {/* Author and Language */}
-        {(ebook.author || ebook.language) && (
-          <div className="text-xs text-gray-500 mb-4 space-y-1">
-            {ebook.author && (
-              <div>
-                <span className="font-semibold">Author:</span> {ebook.author}
-              </div>
-            )}
-            {ebook.language && (
-              <div>
-                <span className="font-semibold">Language:</span> {ebook.language}
-              </div>
-            )}
-          </div>
-        )}
+        {/* Content */}
+        <CardContent className="p-5">
+          {/* Title */}
+          <h3 className="text-base font-semibold text-gray-900 mb-2 line-clamp-2 leading-snug group-hover:text-[#0b3259] transition-colors">
+            {ebook.name}
+          </h3>
 
-        {/* Download Button */}
-        <Button
-          onClick={() => onDownloadClick(ebook)}
-          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-6 text-base shadow-lg"
-        >
-          📥 Download Now
-        </Button>
-      </CardContent>
-    </Card>
+          {/* Author - Minimal */}
+          {ebook.author && (
+            <p className="text-sm text-gray-500 mb-3 truncate">
+              by {ebook.author}
+            </p>
+          )}
+
+          {/* Meta - Clean inline style */}
+          <div className="flex items-center gap-3 text-xs text-gray-400 mb-4">
+            {ebook.pageCount && (
+              <span className="flex items-center gap-1">
+                <FileText className="w-3.5 h-3.5" />
+                {ebook.pageCount} pages
+              </span>
+            )}
+            <span className="flex items-center gap-1">
+              <Download className="w-3.5 h-3.5" />
+              {ebook.downloadCount || 0}
+            </span>
+            <span className="flex items-center gap-1">
+              <Eye className="w-3.5 h-3.5" />
+              {ebook.viewCount || 0}
+            </span>
+          </div>
+
+          {/* CTA Button - Vercel style */}
+          <Button
+            onClick={() => onDownloadClick(ebook)}
+            className="w-full h-10 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-lg transition-all duration-200 group/btn"
+          >
+            <span className="flex items-center justify-center gap-2">
+              Download
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            </span>
+          </Button>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }
-
-
