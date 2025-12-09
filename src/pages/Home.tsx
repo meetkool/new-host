@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/carousel";
 import Footer from '@/components/Footer';
 import { HeroSection, radiusCalculators, HeroContentBuilder } from '@/components/hero';
-import { 
-  BookOpen, 
-  Users, 
-  Award, 
+import {
+  BookOpen,
+  Users,
+  Award,
   TrendingUp,
   Globe,
   Mail,
@@ -27,10 +27,10 @@ import {
   ShieldCheck,
   Heart,
   FlaskConical,
-  CheckCircle2, 
-  Star, 
-  Shield, 
-  Target, 
+  CheckCircle2,
+  Star,
+  Shield,
+  Target,
   Zap,
   MonitorPlay,
   Calendar,
@@ -50,13 +50,13 @@ const Home = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  
+
   // Courses API state management
   const [courses, setCourses] = useState<any[]>([]);
   const [filteredCourses, setFilteredCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  
+
   // Email state for CTA section
   const [email, setEmail] = useState('');
 
@@ -127,7 +127,7 @@ const Home = () => {
       { subject: "Botany (NEET)", icon: Leaf }
     ]
   };
-  
+
   const heroSlides = [
     {
       id: 1,
@@ -193,7 +193,7 @@ const Home = () => {
   // Auto-rotate carousel
   useEffect(() => {
     if (!carouselApi) return;
-    
+
     const interval = setInterval(() => {
       carouselApi.scrollNext();
     }, 5000); // Change slide every 5 seconds
@@ -211,7 +211,7 @@ const Home = () => {
   // Manual categorization function
   const categorizeCourse = (courseName: string): string => {
     const name = courseName.toLowerCase();
-    
+
     if (name.includes('soft skills') || name.includes('communication') || name.includes('leadership')) {
       return 'Soft Skills & Leadership';
     }
@@ -239,7 +239,7 @@ const Home = () => {
     if (name.includes('marketing') || name.includes('business') || name.includes('sales')) {
       return 'Marketing & Business';
     }
-    
+
     return 'Other';
   };
 
@@ -275,7 +275,7 @@ const Home = () => {
         const coursesData = data.data || [];
         setCourses(coursesData);
         setFilteredCourses(coursesData);
-        
+
         // Extract categories dynamically
         const categories = new Set<string>();
         coursesData.forEach((course: any) => {
@@ -288,12 +288,12 @@ const Home = () => {
             categories.add(category);
           }
         });
-        
+
         // Convert Set to sorted array with "Other" at the end
         const categoriesArray = Array.from(categories);
         const otherIndex = categoriesArray.indexOf('Other');
         let sortedCategories;
-        
+
         if (otherIndex !== -1) {
           // Remove "Other" from the array, sort the rest, then add "Other" at the end
           const withoutOther = categoriesArray.filter(cat => cat !== 'Other');
@@ -302,9 +302,9 @@ const Home = () => {
           // No "Other" category, just sort normally
           sortedCategories = categoriesArray.sort();
         }
-        
+
         setCourseCategories(sortedCategories);
-        
+
       } else {
         console.error('Failed to fetch courses');
         // Fallback to empty array
@@ -398,7 +398,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans pt-16">
-      
+
       {/* SECTION 1: TOP BANNER (Yellow) */}
       <div className="bg-[#19a951] py-6 px-4 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -417,7 +417,7 @@ const Home = () => {
       <div className="relative bg-[#0b3259] pt-16 pb-32 px-4 overflow-hidden">
         {/* Curve at bottom */}
         <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: "ellipse(70% 100% at 50% 100%)" }}></div>
-        
+
         <Carousel setApi={setCarouselApi} className="w-full relative z-10" opts={{ loop: true }}>
           <CarouselContent>
             <CarouselItem>
@@ -428,7 +428,7 @@ const Home = () => {
                       ADMISSIONS OPEN 2025-26
                     </Badge>
                     <h1 className="text-4xl md:text-6xl font-black leading-tight">
-                      A Legacy of <br/>
+                      A Legacy of <br />
                       <span className="text-[#19a951] relative">
                         Excellence
                         <svg className="absolute w-full h-3 -bottom-1 left-0 text-white opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -440,14 +440,14 @@ const Home = () => {
                       Quality Education from K–12 to Competitive Exams — Delivered with Purpose, Precision, and Personalization. Udaan for every Student's future success.
                     </p>
                     <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                      <Button 
+                      <Button
                         className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-all transform hover:scale-105"
                         onClick={() => navigate('/programs')}
                       >
                         Enroll Now
                       </Button>
-                      <Button 
-                        variant="outline" 
+                      <Button
+                        variant="outline"
                         className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full hover:shadow-lg transition-all"
                         onClick={() => navigate('/scholarship-test')}
                       >
@@ -478,109 +478,109 @@ const Home = () => {
                 </div>
               </div>
             </CarouselItem>
-            
+
             {/* Second Slide - Areas of Focus with Device Mockup */}
             <CarouselItem>
               <div className="max-w-7xl mx-auto min-h-[500px] md:h-[600px] flex items-center justify-center relative overflow-hidden px-4 py-8">
-                
+
                 <div className="relative z-10 w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                   
-                   {/* Left Side - Text Content */}
-                   <div className="relative bg-white rounded-[2rem] p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50 overflow-hidden">
-                      {/* Decorative accent */}
-                      <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#19a951] via-[#0b3259] to-[#19a951] rounded-l-[2rem]"></div>
-                      
-                      {/* Title with elegant styling */}
-                      <div className="mb-10 pl-4">
-                        <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] leading-tight font-serif italic text-[#0b3259] tracking-tight">
-                          Areas where we Focus
-                        </h2>
-                        <div className="w-16 h-1 bg-[#19a951] mt-4 rounded-full"></div>
-                      </div>
-                      
-                      {/* Focus areas with refined styling */}
-                      <ul className="space-y-4 mb-10 pl-4">
-                        {[
-                          { text: "K–12 School Learning", sub: "(Classes 1–12)" },
-                          { text: "JEE", sub: "(Main & Advanced)" },
-                          { text: "NEET", sub: "(UG)" },
-                          { text: "UPSC / Civil Services", sub: "Foundation" },
-                          { text: "Olympiads & NTSE", sub: "" },
-                          { text: "Skill Development", sub: "for Students" }
-                        ].map((item, idx) => (
-                          <li key={idx} className="flex items-center gap-4 group">
-                            <span className="w-2.5 h-2.5 bg-[#19a951] rounded-full shrink-0 group-hover:scale-125 transition-transform duration-300"></span>
-                            <span className="text-base md:text-lg text-gray-800 font-medium">
-                              {item.text}
-                              {item.sub && <span className="text-gray-500 font-normal ml-1">{item.sub}</span>}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      {/* Faculties From Section - Refined */}
-                      <div className="border-t-2 border-gray-100 pt-8 pl-4">
-                        <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Faculties from</h3>
-                        <div className="flex flex-wrap items-end gap-5 md:gap-8">
-                          {/* IIT Bombay */}
-                          <div className="flex flex-col items-center group cursor-pointer">
-                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
-                              <img src="/images/iitb.png" alt="IIT Bombay" className="w-full h-full object-contain" />
-                            </div>
-                            <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIT,B</span>
+
+                  {/* Left Side - Text Content */}
+                  <div className="relative bg-white rounded-[2rem] p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50 overflow-hidden">
+                    {/* Decorative accent */}
+                    <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#19a951] via-[#0b3259] to-[#19a951] rounded-l-[2rem]"></div>
+
+                    {/* Title with elegant styling */}
+                    <div className="mb-10 pl-4">
+                      <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] leading-tight font-serif italic text-[#0b3259] tracking-tight">
+                        Areas where we Focus
+                      </h2>
+                      <div className="w-16 h-1 bg-[#19a951] mt-4 rounded-full"></div>
+                    </div>
+
+                    {/* Focus areas with refined styling */}
+                    <ul className="space-y-4 mb-10 pl-4">
+                      {[
+                        { text: "K–12 School Learning", sub: "(Classes 1–12)" },
+                        { text: "JEE", sub: "(Main & Advanced)" },
+                        { text: "NEET", sub: "(UG)" },
+                        { text: "UPSC / Civil Services", sub: "Foundation" },
+                        { text: "Olympiads & NTSE", sub: "" },
+                        { text: "Skill Development", sub: "for Students" }
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-4 group">
+                          <span className="w-2.5 h-2.5 bg-[#19a951] rounded-full shrink-0 group-hover:scale-125 transition-transform duration-300"></span>
+                          <span className="text-base md:text-lg text-gray-800 font-medium">
+                            {item.text}
+                            {item.sub && <span className="text-gray-500 font-normal ml-1">{item.sub}</span>}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Faculties From Section - Refined */}
+                    <div className="border-t-2 border-gray-100 pt-8 pl-4">
+                      <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Faculties from</h3>
+                      <div className="flex flex-wrap items-end gap-5 md:gap-8">
+                        {/* IIT Bombay */}
+                        <div className="flex flex-col items-center group cursor-pointer">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
+                            <img src="/images/iitb.png" alt="IIT Bombay" className="w-full h-full object-contain" />
                           </div>
-                          {/* IIT Delhi */}
-                          <div className="flex flex-col items-center group cursor-pointer">
-                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
-                              <img src="/images/iitd.png" alt="IIT Delhi" className="w-full h-full object-contain" />
-                            </div>
-                            <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIT,D</span>
+                          <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIT,B</span>
+                        </div>
+                        {/* IIT Delhi */}
+                        <div className="flex flex-col items-center group cursor-pointer">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
+                            <img src="/images/iitd.png" alt="IIT Delhi" className="w-full h-full object-contain" />
                           </div>
-                          {/* IIITL */}
-                          <div className="flex flex-col items-center group cursor-pointer">
-                            <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
-                              <img src="/images/IIITl.png" alt="IIITL" className="w-full h-full object-contain" />
-                            </div>
-                            <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIITL</span>
+                          <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIT,D</span>
+                        </div>
+                        {/* IIITL */}
+                        <div className="flex flex-col items-center group cursor-pointer">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 p-2">
+                            <img src="/images/IIITl.png" alt="IIITL" className="w-full h-full object-contain" />
                           </div>
-                          {/* KOTA */}
-                          <div className="flex flex-col items-center group cursor-pointer">
-                            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
-                              <span className="text-sm font-black text-white tracking-widest">KOTA</span>
-                            </div>
+                          <span className="text-xs font-bold text-gray-600 mt-2 tracking-wide">IIITL</span>
+                        </div>
+                        {/* KOTA */}
+                        <div className="flex flex-col items-center group cursor-pointer">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+                            <span className="text-sm font-black text-white tracking-widest">KOTA</span>
                           </div>
                         </div>
                       </div>
-                   </div>
+                    </div>
+                  </div>
 
-                   {/* Right Side - Device Mockups */}
-                   <div className="relative h-[350px] md:h-[450px] lg:h-[500px]">
-                      
-                      {/* Laptop - Main device at top */}
-                      <div className="absolute top-0 right-0 w-[85%] md:w-[90%] z-10">
-                        <div className="relative">
-                          <img src="/images/laptop.png" alt="Laptop Frame" className="w-full relative z-10 drop-shadow-2xl" />
-                          <div className="absolute top-[10%] left-[11.2%] w-[76%] h-[72%] z-20 overflow-hidden flex items-center justify-center rounded-sm">
-                            <img src="/images/certificate.png" alt="Certificate" className="w-full h-full object-cover" />
-                          </div>
+                  {/* Right Side - Device Mockups */}
+                  <div className="relative h-[350px] md:h-[450px] lg:h-[500px]">
+
+                    {/* Laptop - Main device at top */}
+                    <div className="absolute top-0 right-0 w-[85%] md:w-[90%] z-10">
+                      <div className="relative">
+                        <img src="/images/laptop.png" alt="Laptop Frame" className="w-full relative z-10 drop-shadow-2xl" />
+                        <div className="absolute top-[10%] left-[11.2%] w-[76%] h-[72%] z-20 overflow-hidden flex items-center justify-center rounded-sm">
+                          <img src="/images/certificate.png" alt="Certificate" className="w-full h-full object-cover" />
                         </div>
                       </div>
+                    </div>
 
-                      {/* Tablet - Bottom left, overlapping laptop */}
-                      <div className="absolute bottom-0 left-0 w-[45%] md:w-[40%] z-30 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <div className="bg-gray-900 p-2 md:p-3 rounded-xl md:rounded-2xl shadow-2xl">
-                          <div className="bg-gray-800 rounded-lg overflow-hidden aspect-[4/5] relative border border-gray-700">
-                            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-black/30 rounded-full z-10"></div>
-                            <img src="/images/tykknb.jpeg" alt="Award Ceremony" className="w-full h-full object-cover" />
-                          </div>
+                    {/* Tablet - Bottom left, overlapping laptop */}
+                    <div className="absolute bottom-0 left-0 w-[45%] md:w-[40%] z-30 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                      <div className="bg-gray-900 p-2 md:p-3 rounded-xl md:rounded-2xl shadow-2xl">
+                        <div className="bg-gray-800 rounded-lg overflow-hidden aspect-[4/5] relative border border-gray-700">
+                          <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-black/30 rounded-full z-10"></div>
+                          <img src="/images/tykknb.jpeg" alt="Award Ceremony" className="w-full h-full object-cover" />
                         </div>
                       </div>
+                    </div>
 
-                      {/* Phone - Bottom right, overlapping laptop */}
-                      <div className="absolute bottom-4 right-0 w-[25%] md:w-[22%] z-40 transform rotate-6 hover:rotate-0 transition-transform duration-500">
-                        <img src="/images/phone.png" alt="Phone" className="w-full drop-shadow-2xl rounded-[1.3rem]" />
-                      </div>
-                   </div>
+                    {/* Phone - Bottom right, overlapping laptop */}
+                    <div className="absolute bottom-4 right-0 w-[25%] md:w-[22%] z-40 transform rotate-6 hover:rotate-0 transition-transform duration-500">
+                      <img src="/images/phone.png" alt="Phone" className="w-full drop-shadow-2xl rounded-[1.3rem]" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </CarouselItem>
@@ -599,7 +599,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <h3 className="text-xl font-semibold text-gray-600 mb-2">Our Recent</h3>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900">Trailblazers</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900">Achievers</h2>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12">
@@ -609,18 +609,17 @@ const Home = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`w-full text-left px-6 py-4 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${
-                    activeTab === tab
+                  className={`w-full text-left px-6 py-4 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${activeTab === tab
                       ? 'bg-[#19a951] text-black shadow-md translate-x-2'
                       : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
               ))}
-              
+
               <div className="pt-8">
-                <Button 
+                <Button
                   className="w-full bg-[#0b3259] hover:bg-[#0E312C] text-white font-bold py-6 rounded-full"
                   onClick={() => navigate('/results')}
                 >
@@ -648,12 +647,12 @@ const Home = () => {
                           <div className="text-6xl font-black text-[#0b3259] leading-none mb-4">
                             {student.rank}
                           </div>
-                          
+
                           {/* Student Image */}
                           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-6 w-32 h-32">
                             <div className="w-full h-full rounded-full border-4 border-white overflow-hidden shadow-md bg-gray-200">
-                              <img 
-                                src={student.img} 
+                              <img
+                                src={student.img}
                                 alt={student.name}
                                 className="w-full h-full object-cover"
                               />
@@ -716,7 +715,7 @@ const Home = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Programs Designed<br/>to Help You Win
+                Our Programs Designed<br />to Help You Win
               </h2>
               <div className="h-1.5 w-24 bg-[#0b3259] rounded-full"></div>
             </div>
@@ -776,7 +775,7 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-            Upcoming Diagnostic Cum<br/>Scholarship Opportunities
+            Upcoming Diagnostic Cum<br />Scholarship Opportunities
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -838,13 +837,13 @@ const Home = () => {
 
             {methodologySteps.map((step, i) => (
               <div key={i} className={`flex items-center gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} relative pb-12`}>
-                
+
                 {/* Empty half for desktop layout */}
                 <div className="hidden md:block md:w-1/2"></div>
 
                 {/* Center Point on Line */}
                 <div className="absolute left-8 md:left-1/2 w-8 h-8 bg-[#19a951] border-4 border-[#0b3259] rounded-full z-20 transform -translate-x-1/2 md:translate-x-[-50%]"></div>
-                
+
                 {/* Connecting Arm */}
                 <div className={`hidden md:block absolute top-1/2 h-2 bg-[#0b3259] w-16 z-0 ${i % 2 === 0 ? 'left-1/2 ml-4' : 'right-1/2 mr-4'}`}></div>
 
@@ -855,7 +854,7 @@ const Home = () => {
                     <div className="absolute -top-8 left-8 bg-white p-3 rounded-xl shadow-lg border-2 border-[#19a951]">
                       <step.icon className="w-8 h-8 text-[#0b3259]" />
                     </div>
-                    
+
                     <h3 className="text-xl font-bold text-gray-900 mt-4 mb-3">{step.title}</h3>
                     <p className="text-gray-600 font-medium text-sm leading-relaxed">{step.desc}</p>
                   </div>
@@ -863,11 +862,11 @@ const Home = () => {
 
               </div>
             ))}
-            
+
             <div className="text-center pt-8 relative z-30">
-               <Button className="bg-[#0b3259] hover:bg-[#0E312C] text-white px-8 py-2 rounded-full text-sm font-bold shadow-lg">
-                 Read more
-               </Button>
+              <Button className="bg-[#0b3259] hover:bg-[#0E312C] text-white px-8 py-2 rounded-full text-sm font-bold shadow-lg">
+                Read more
+              </Button>
             </div>
           </div>
         </div>
@@ -891,14 +890,14 @@ const Home = () => {
                 Know More
               </Button>
             </div>
-            
+
             <div className="md:w-1/2 relative">
-               <div className="absolute inset-0 bg-[#19a951]/20 rounded-lg transform rotate-3 scale-105"></div>
-               <img 
-                 src="/images/tykknb.jpeg" 
-                 alt="Prayozan Team" 
-                 className="relative rounded-lg shadow-2xl w-full object-cover border-4 border-[#19a951]/30"
-               />
+              <div className="absolute inset-0 bg-[#19a951]/20 rounded-lg transform rotate-3 scale-105"></div>
+              <img
+                src="/images/tykknb.jpeg"
+                alt="Prayozan Team"
+                className="relative rounded-lg shadow-2xl w-full object-cover border-4 border-[#19a951]/30"
+              />
             </div>
           </div>
         </div>
@@ -921,11 +920,10 @@ const Home = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveProgramTab(tab)}
-                  className={`px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 ${
-                    activeProgramTab === tab
+                  className={`px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 ${activeProgramTab === tab
                       ? 'bg-[#0b3259] text-white shadow-lg scale-105'
                       : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
