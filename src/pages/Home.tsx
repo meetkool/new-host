@@ -11,7 +11,6 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Footer from '@/components/Footer';
-import { HeroSection, radiusCalculators, HeroContentBuilder } from '@/components/hero';
 import {
   BookOpen,
   Users,
@@ -127,51 +126,6 @@ const Home = () => {
       { subject: "Botany (NEET)", icon: Leaf }
     ]
   };
-
-  const heroSlides = [
-    {
-      id: 1,
-      title: "Get Certified. Get Ahead.",
-      stats: [
-        { number: "8,000,000", text: "Careers advanced" },
-        { number: "1,500", text: "Live classes every month" },
-        { number: "85%", text: "Report career success" }
-      ],
-      buttons: [
-        { text: "Explore Programs", style: "primary", url: "/programs", isExternal: false },
-        { text: "Student Login", style: "outline", url: "/student/login", isExternal: false }
-      ],
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop"
-    },
-    {
-      id: 2,
-      title: "Master In-Demand Skills with Expert Training",
-      stats: [
-        { number: "2,000+", text: "Industry experts" },
-        { number: "500+", text: "Certification programs" },
-        { number: "92%", text: "Job placement rate" }
-      ],
-      buttons: [
-        { text: "Browse Programs", style: "primary", url: "/programs", isExternal: false },
-        { text: "Free Demo Class", style: "outline", url: "/scholarship-test", isExternal: false }
-      ],
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=600&fit=crop"
-    },
-    {
-      id: 3,
-      title: "Transform Your Skills, Transform Your Life",
-      stats: [
-        { number: "50,000+", text: "Students enrolled" },
-        { number: "₹99", text: "Starting price for live courses" },
-        { number: "100%", text: "Practical learning approach" }
-      ],
-      buttons: [
-        { text: "Get Started Now", style: "primary", url: "/scholarship-test", isExternal: false },
-        { text: "View Success Stories", style: "outline", url: "/results", isExternal: false }
-      ],
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=600&fit=crop"
-    }
-  ];
 
   // Carousel API effect
   useEffect(() => {
@@ -351,14 +305,6 @@ const Home = () => {
     filterCourses(selectedCategory);
   }, [selectedCategory, courses]);
 
-  // Configuration using Builder Pattern - easily customizable
-  const customHeroContent = new HeroContentBuilder()
-    .setBadge("ACHIEVE YOUR IIT DREAM")
-    .setTitle(["INDIA'S PREMIER", "IIT JEE COACHING", "INSTITUTE"])
-    .setSubtitle("Master JEE Main & Advanced with expert faculty, comprehensive study material, and advanced test series.")
-    .setCTA("START YOUR IIT JOURNEY TODAY")
-    .build();
-
   // Event handler - Dependency Inversion
   const handleCtaClick = () => {
     // Could be injected as a dependency for better testability
@@ -403,7 +349,7 @@ const Home = () => {
       <div className="bg-[#19a951] py-6 px-4 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-wide mb-3">
-            BUILT UPON 10 YEARS OF EXCELLENCE
+            {BRANDING.name} - {BRANDING.stats.yearsOfExperience} YEARS OF EXCELLENCE
           </h2>
           <div className="flex flex-wrap justify-center gap-6 mt-2 text-sm md:text-base font-bold text-white/90">
             <span className="flex items-center gap-2"><Star className="w-5 h-5 fill-current" /> Unmatched Legacy</span>
@@ -425,19 +371,19 @@ const Home = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div className="text-white space-y-8 text-center lg:text-left">
                     <Badge className="bg-[#19a951] text-black hover:bg-[#0E312C] border-none px-4 py-1.5 text-sm font-bold tracking-wider">
-                      ADMISSIONS OPEN 2025-26
+                      PRAYOZAN ADMISSIONS OPEN
                     </Badge>
                     <h1 className="text-4xl md:text-6xl font-black leading-tight">
-                      A Legacy of <br />
+                      Welcome to <br />
                       <span className="text-[#19a951] relative">
-                        Excellence
+                        Prayozan
                         <svg className="absolute w-full h-3 -bottom-1 left-0 text-white opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
                           <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
                         </svg>
-                      </span> & Commitment
+                      </span> & Excellence
                     </h1>
                     <p className="text-lg md:text-xl text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                      Quality Education from K–12 to Competitive Exams — Delivered with Purpose, Precision, and Personalization. Udaan for every Student's future success.
+                      Prayozan: Your partner in success. Quality Education from K–12 to Competitive Exams — Delivered with Purpose, Precision, and Personalization.
                     </p>
                     <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                       <Button
@@ -610,8 +556,8 @@ const Home = () => {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`w-full text-left px-6 py-4 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${activeTab === tab
-                      ? 'bg-[#19a951] text-black shadow-md translate-x-2'
-                      : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'bg-[#19a951] text-black shadow-md translate-x-2'
+                    : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
                     }`}
                 >
                   {tab}
@@ -921,8 +867,8 @@ const Home = () => {
                   key={tab}
                   onClick={() => setActiveProgramTab(tab)}
                   className={`px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 ${activeProgramTab === tab
-                      ? 'bg-[#0b3259] text-white shadow-lg scale-105'
-                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                    ? 'bg-[#0b3259] text-white shadow-lg scale-105'
+                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                     }`}
                 >
                   {tab}

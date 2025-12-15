@@ -187,14 +187,6 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-3">
             <Button
-              variant="outline"
-              size="sm"
-              className="border-[#0b3259] text-[#0b3259] hover:bg-[#0b3259] hover:text-white font-bold"
-              onClick={() => window.location.href = '/student/login'}
-            >
-              Student Login
-            </Button>
-            <Button
               variant="default"
               size="lg"
               className="bg-[#0b3259] text-white hover:bg-[#19a951] font-bold"
@@ -263,9 +255,7 @@ const Navigation = () => {
               <Link to="/about-us" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                 About Us
               </Link>
-              <Link to="/student/login" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
-                Student Login
-              </Link>
+
               <Button
                 variant="hero"
                 size="lg"
