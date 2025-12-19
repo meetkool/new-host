@@ -6,25 +6,25 @@ const Footer = () => {
   return (
     <footer className="bg-[#0E312C] text-white pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Top Footer: Links & Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          
+
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <Logo /> 
+              <Logo />
               {/* Note: Logo component might need adjustment for dark mode if it has dark text. 
                   Assuming Logo handles it or we wrap it. 
                   If Logo is text-based, we might need to force white color.
               */}
             </div>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed pr-4">
-              {BRANDING.name} was created for IIT-JEE aspirants to provide an ideal launch pad for serious JEE aspirants. 
-              Along the way to realization of this vision, we went beyond merely coaching for IIT-JEE. We actually started 
+              {BRANDING.name} was created for IIT-JEE aspirants to provide an ideal launch pad for serious JEE aspirants.
+              Along the way to realization of this vision, we went beyond merely coaching for IIT-JEE. We actually started
               to make a difference in the way students think and approach problems.
             </p>
-            
+
             {/* Social Icons */}
             <div className="flex space-x-4 mb-8">
               {[Facebook, Twitter, Youtube, Instagram, Linkedin, Globe].map((Icon, i) => (
@@ -34,20 +34,12 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Address */}
+            {/* Contact */}
             <div className="space-y-3 text-sm text-gray-400">
-              <h4 className="text-white font-bold uppercase tracking-wider mb-2">Address</h4>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-1 shrink-0 text-[#19a951]" />
-                <p>{BRANDING.contact.address}</p>
-              </div>
+              <h4 className="text-white font-bold uppercase tracking-wider mb-2">Contact</h4>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 shrink-0 text-[#19a951]" />
                 <p>{BRANDING.contact.phone}</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 shrink-0 text-[#19a951]" />
-                <p>{BRANDING.contact.email}</p>
               </div>
             </div>
           </div>

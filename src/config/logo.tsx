@@ -20,9 +20,9 @@ export interface LogoConfig {
 // Default logo configuration - Change this to customize your logo
 export const logoConfig: LogoConfig = {
   type: 'image', // Options: 'image', 'icon-text', 'text-only'
-  
+
   // Image Configuration (L2H Logo)
-  imageUrl: '/images/prayzan_logojpeg.jpeg',
+  imageUrl: '/images/prayzan_logojpeg-removebg-preview.png',
   imageAlt: 'Prayozan School of Success',
   width: '200px',
   height: 'auto',
@@ -35,7 +35,7 @@ export const logoConfig: LogoConfig = {
   // textClassName: 'text-xl font-bold gradient-primary bg-clip-text text-transparent',
   // containerClassName: 'w-8 h-8 gradient-primary rounded-lg flex items-center justify-center',
   // linkClassName: 'flex items-center space-x-2 hover-scale',
-  
+
   // Text Only Configuration (uncomment to use text only)
   // text: 'L2H Education',
   // textClassName: 'text-2xl font-bold gradient-primary bg-clip-text text-transparent',

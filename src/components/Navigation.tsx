@@ -182,6 +182,14 @@ const Navigation = () => {
             >
               About Us
             </Link>
+
+            <Link
+              to="/school-partnership"
+              className={`font-bold transition-smooth ${isActive('/school-partnership') ? 'text-[#19a951]' : 'text-[#0b3259] hover:text-[#19a951]'
+                }`}
+            >
+              School Partnership
+            </Link>
           </div>
 
           {/* CTA Button */}
@@ -254,6 +262,9 @@ const Navigation = () => {
               </Link>
               <Link to="/about-us" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                 About Us
+              </Link>
+              <Link to="/school-partnership" className="font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+                School Partnership
               </Link>
 
               <Button

@@ -16,6 +16,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import QualityPolicy from "./pages/QualityPolicy";
 import RefundsCancellation from "./pages/RefundsCancellation";
 import Partnerships from "./pages/Partnerships";
+import SchoolPartnership from "./pages/SchoolPartnership";
 import NotFound from "./pages/NotFound";
 
 // New JEE-focused pages
@@ -63,7 +64,7 @@ const App = () => (
         <Routes>
           {/* Admin Login (No Layout) */}
           <Route path="/admin/login" element={<AdminLogin />} />
-          
+
           {/* Admin Routes (With Layout) - Protected */}
           <Route path="/admin" element={
             <ProtectedRoute>
@@ -98,18 +99,18 @@ const App = () => (
               <Navigation />
               <Routes>
                 <Route path="/" element={<Home />} />
-                
+
                 {/* Programs Routes */}
                 <Route path="/programs" element={<Programs />} />
                 <Route path="/programs/classroom" element={<ClassroomPrograms />} />
                 <Route path="/programs/integrated-school" element={<IntegratedSchoolPrograms />} />
                 <Route path="/programs/online" element={<OnlinePrograms />} />
                 <Route path="/programs/crash-course" element={<CrashCourses />} />
-                
+
                 {/* Test Series & Scholarship */}
                 <Route path="/test-series" element={<TestSeries />} />
                 <Route path="/scholarship-test" element={<ScholarshipTest />} />
-                
+
                 {/* About & Info Pages */}
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/pedagogy" element={<Pedagogy />} />
@@ -117,23 +118,24 @@ const App = () => (
                 <Route path="/faculty" element={<Faculty />} />
                 <Route path="/results" element={<Results />} />
                 <Route path="/centers" element={<Centers />} />
-                
+
                 {/* Existing Routes */}
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/blogs/:slug" element={<BlogDetail />} />
                 <Route path="/success-stories" element={<SuccessStories />} />
                 <Route path="/ebooks" element={<Ebooks />} />
                 <Route path="/partnerships" element={<Partnerships />} />
-                
+                <Route path="/school-partnership" element={<SchoolPartnership />} />
+
                 {/* Policy Pages */}
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/quality-policy" element={<QualityPolicy />} />
                 <Route path="/refunds-cancellation" element={<RefundsCancellation />} />
-                
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
               {/* Floating Contact Button - Appears on all public pages */}
-              <FloatingContactButton 
+              <FloatingContactButton
                 whatsappNumber="919876543210"
                 phoneNumber="+919876543210"
                 whatsappMessage="Hi, I would like to inquire about JEE coaching programs at Elite IIT Academy."
