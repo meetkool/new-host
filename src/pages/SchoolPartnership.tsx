@@ -297,7 +297,7 @@ const SchoolPartnership = () => {
                             viewport={{ once: true }}
                             className="space-y-6"
                         >
-                            <Badge className="bg-[#0b3259] text-white">BUILT UPON 10 YEARS OF EXCELLENCE</Badge>
+                            <Badge className="bg-[#0b3259] text-white">BUILT UPON 20+ YEARS OF EXCELLENCE</Badge>
                             <h2 className="text-3xl md:text-5xl font-black text-gray-900">
                                 About <span className="text-[#19a951]">Prayozan</span>
                             </h2>
@@ -326,6 +326,11 @@ const SchoolPartnership = () => {
                                     alt="About Prayozan - Satish Nagar, Founder"
                                     className="w-full max-w-md rounded-2xl shadow-2xl"
                                 />
+                                {/* Caption */}
+                                <div className="mt-4 text-center">
+                                    <h4 className="text-xl font-bold text-[#0b3259]">Satish Nagar</h4>
+                                    <p className="text-gray-600 font-medium">Founder</p>
+                                </div>
                                 {/* Decorative elements */}
                                 <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#19a951] rounded-xl -z-10"></div>
                                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#0b3259]/20 rounded-xl -z-10"></div>
