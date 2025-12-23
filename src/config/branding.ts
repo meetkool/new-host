@@ -25,7 +25,7 @@ export const BRANDING = {
 
   // Statistics
   stats: {
-    yearsOfExperience: 20,
+    yearsOfExperience: '20+',
     studentsEnrolled: 50000,
     iitSelections: 2000,
     successRate: 95,
