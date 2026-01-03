@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Footer from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
-import { 
-  Award, 
-  Users, 
+import {
+  Award,
+  Users,
   Trophy,
   TrendingUp,
   Target,
@@ -64,7 +64,7 @@ const AboutUs = () => {
       <section className="bg-[#0b3259] text-white py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-green-500/20 rounded-full -ml-24 -mb-24"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-2/3">
@@ -79,8 +79,12 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center">
-              <div className="bg-white p-4 rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform">
-                 <Trophy className="w-32 h-32 text-[#0b3259]" />
+              <div className="bg-white p-2 rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform">
+                <img
+                  src="/images/about-us-banner.jpeg"
+                  alt="About Prayozan"
+                  className="w-full h-auto rounded shadow-sm object-cover max-h-[400px]"
+                />
               </div>
             </div>
           </div>
@@ -93,7 +97,7 @@ const AboutUs = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat, index) => (
               <Card key={index} className="bg-[#19a951] border-none shadow-lg hover:shadow-xl transition-all text-center py-6 relative overflow-hidden group">
-                 <div className="absolute top-0 right-0 w-16 h-16 bg-white/20 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-white/20 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150"></div>
                 <CardContent className="p-0 relative z-10">
                   <div className="flex justify-center mb-3 text-[#0b3259]">
                     {stat.icon}
@@ -111,37 +115,37 @@ const AboutUs = () => {
       <section className="py-20 relative">
         {/* Winding Path Background (Simulated) */}
         <div className="absolute inset-0 z-0 opacity-5 pointer-events-none overflow-hidden">
-           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path d="M0,0 C30,10 70,10 100,0 L100,100 L0,100 Z" fill="#000" />
-           </svg>
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,0 C30,10 70,10 100,0 L100,100 L0,100 Z" fill="#000" />
+          </svg>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             <div className="lg:w-1/2">
               <div className="inline-block border-b-4 border-[#0b3259] mb-6">
-                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 pb-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 pb-2">
                   Our Journey & Legacy
                 </h2>
               </div>
               <div className="space-y-6 text-gray-700 text-lg leading-relaxed text-justify">
                 <p>
                   <span className="text-4xl float-left mr-2 mt-[-10px] font-black text-[#0b3259]">F</span>
-                  ounded in 2000, we started with a simple yet powerful vision: to make quality JEE coaching 
-                  accessible to every aspiring engineer in India. What began as a small coaching center with 
+                  ounded in 2000, we started with a simple yet powerful vision: to make quality JEE coaching
+                  accessible to every aspiring engineer in India. What began as a small coaching center with
                   just 30 students has grown into one of India's premier JEE preparation institutes.
                 </p>
                 <p>
-                  Our journey has been marked by continuous innovation in teaching methodologies, investment 
-                  in technology, and an unwavering commitment to student success. Today, we're proud to have 
+                  Our journey has been marked by continuous innovation in teaching methodologies, investment
+                  in technology, and an unwavering commitment to student success. Today, we're proud to have
                   helped thousands of students achieve their dreams of studying at IITs and other premier institutions.
                 </p>
                 <div className="bg-gray-50 border-l-4 border-[#0b3259] p-6 my-6 rounded-r-lg italic text-gray-600">
                   "Success is not just about clearing an exam; it's about building the character and discipline required to excel in life."
                 </div>
                 <p>
-                  With experienced faculty, comprehensive study material, advanced testing systems, and personalized 
-                  mentorship, we provide everything a JEE aspirant needs to succeed. Our success rate speaks for itself, 
+                  With experienced faculty, comprehensive study material, advanced testing systems, and personalized
+                  mentorship, we provide everything a JEE aspirant needs to succeed. Our success rate speaks for itself,
                   but our true pride lies in the countless lives we've transformed.
                 </p>
               </div>
@@ -157,7 +161,7 @@ const AboutUs = () => {
                   {milestones.map((milestone, index) => (
                     <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-8 last:mb-0">
                       <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-[#19a951] text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                         <div className="w-3 h-3 bg-[#0b3259] rounded-full"></div>
+                        <div className="w-3 h-3 bg-[#0b3259] rounded-full"></div>
                       </div>
                       <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow-sm">
                         <div className="flex items-center justify-between space-x-2 mb-1">
@@ -207,29 +211,29 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#0b3259] text-white p-10 rounded-xl relative overflow-hidden shadow-xl">
-               <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-               <div className="flex items-center mb-6">
-                 <Target className="w-10 h-10 text-[#19a951] mr-4" />
-                 <h3 className="text-3xl font-bold">Our Mission</h3>
-               </div>
-               <p className="text-lg leading-relaxed text-gray-200">
-                 To provide world-class JEE coaching that empowers students with knowledge, skills, 
-                 and confidence to excel in competitive exams and build successful careers in engineering 
-                 and technology.
-               </p>
+              <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+              <div className="flex items-center mb-6">
+                <Target className="w-10 h-10 text-[#19a951] mr-4" />
+                <h3 className="text-3xl font-bold">Our Mission</h3>
+              </div>
+              <p className="text-lg leading-relaxed text-gray-200">
+                To provide world-class JEE coaching that empowers students with knowledge, skills,
+                and confidence to excel in competitive exams and build successful careers in engineering
+                and technology.
+              </p>
             </div>
 
             <div className="bg-[#0b3259] text-white p-10 rounded-xl relative overflow-hidden shadow-xl">
-               <div className="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-green-400/20 rounded-full blur-2xl"></div>
-               <div className="flex items-center mb-6">
-                 <Lightbulb className="w-10 h-10 text-[#19a951] mr-4" />
-                 <h3 className="text-3xl font-bold">Our Vision</h3>
-               </div>
-               <p className="text-lg leading-relaxed text-gray-100">
-                 To be India's most trusted and innovative JEE coaching institute, recognized for 
-                 transforming lives through quality education, personalized mentorship, and 
-                 technology-driven learning solutions.
-               </p>
+              <div className="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-green-400/20 rounded-full blur-2xl"></div>
+              <div className="flex items-center mb-6">
+                <Lightbulb className="w-10 h-10 text-[#19a951] mr-4" />
+                <h3 className="text-3xl font-bold">Our Vision</h3>
+              </div>
+              <p className="text-lg leading-relaxed text-gray-100">
+                To be India's most trusted and innovative JEE coaching institute, recognized for
+                transforming lives through quality education, personalized mentorship, and
+                technology-driven learning solutions.
+              </p>
             </div>
           </div>
         </div>
@@ -237,20 +241,20 @@ const AboutUs = () => {
 
       {/* Did You Know Banner */}
       <section className="py-12 bg-[#0b3259] text-white">
-         <div className="max-w-6xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Do You Know That Excellence is a Habit?
-            </h2>
-            <p className="text-xl max-w-3xl mx-auto mb-8 font-light">
-              90% of our students who started in Class 9th have secured a rank in Top 5000 in JEE Advanced. Early start gives you the edge!
-            </p>
-            <Button 
-              className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-colors"
-              onClick={() => navigate('/programs')}
-            >
-              Explore Integrated Programs
-            </Button>
-         </div>
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Do You Know That Excellence is a Habit?
+          </h2>
+          <p className="text-xl max-w-3xl mx-auto mb-8 font-light">
+            90% of our students who started in Class 9th have secured a rank in Top 5000 in JEE Advanced. Early start gives you the edge!
+          </p>
+          <Button
+            className="bg-[#19a951] text-black hover:bg-white hover:text-[#0b3259] font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-colors"
+            onClick={() => navigate('/programs')}
+          >
+            Explore Integrated Programs
+          </Button>
+        </div>
       </section>
 
       <Footer />
