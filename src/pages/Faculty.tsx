@@ -90,11 +90,11 @@ const Faculty = () => {
                      <div className="text-sm font-bold text-gray-500 uppercase">IITian / Expert Faculty</div>
                   </div>
                   <div className="p-6 text-center">
-                     <div className="text-3xl font-black text-[#0b3259] mb-1">21+</div>
+                     <div className="text-3xl font-black text-[#0b3259] mb-1">20+</div>
                      <div className="text-sm font-bold text-gray-500 uppercase">Avg Experience</div>
                   </div>
                   <div className="p-6 text-center">
-                     <div className="text-3xl font-black text-[#0b3259] mb-1">5000+</div>
+                     <div className="text-3xl font-black text-[#0b3259] mb-1">1000+</div>
                      <div className="text-sm font-bold text-gray-500 uppercase">IIT Selections</div>
                   </div>
                   <div className="p-6 text-center">
