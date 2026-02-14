@@ -21,4 +21,7 @@ export default defineConfig(({ mode }) => ({
   worker: {
     format: 'es',
   },
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
 }));
