@@ -23,7 +23,8 @@ const Faculty = () => {
          experience: '21 Years',
          specialization: 'Organic Chemistry',
          achievements: ['Expert in Mechanisms', 'Top Rank Producer'],
-         image: '/images/ppl1.png'
+         image: '/images/ppl1.png',
+         bio: '"ASW Sir" (Amitabh Shrivastava) is a highly esteemed educator in the field of Organic Chemistry, renowned for his extensive teaching experience that spans over 21 years. He specializes in teaching Organic Chemistry for competitive exams, specifically catering to JEE (Mains and Advanced) and NEET aspirants'
       },
       {
          name: 'VKR Sir',
@@ -32,7 +33,8 @@ const Faculty = () => {
          experience: '24 Years',
          specialization: 'Mathematics',
          achievements: ['Ex-FIITJEE', 'Olympiad Expert'],
-         image: '/images/ppl2.png'
+         image: '/images/ppl2.png',
+         bio: 'Vinay Kumar, popularly known as VKR Sir, is a highly regarded mathematics educator specializing in IIT-JEE preparation. He graduated with a B.Tech from IIT Delhi (Mechanical Engineering, 1998). He is the founder of VKR Mathematics Classes (established in May 2007) and is recognized as one of the top individual mathematics faculties in Kota, Rajasthan.'
       },
       {
          name: 'NMS Sir',
@@ -40,8 +42,10 @@ const Faculty = () => {
          qualification: 'IIT Kanpur',
          experience: '20 Years',
          specialization: 'Physics',
-         achievements: ['Conceptual Mastery', 'Mentor of IITians'],
-         image: '/images/ppl3.png'
+         achievements: ['James Bond of Physics', 'Mentor of IITians'],
+         image: '/images/ppl3.png',
+         bio: 'NMS Sir refers to Neel Mani Srivastava, a prominent Physics educator and an alumnus IIT Kanpur. He is widely known by his name, James Bond of Physics for his unique and engaging teaching style. With over 19 years of experience, he has served as a senior faculty member and head of department at major coaching institutes including Allen Career Institute (Kota), Narayana, and Unacademy. He has mentored more than 50,000 students, including over 500 who secured ranks in the Top 500 of the JEE Advanced.',
+         imageStyle: { objectPosition: 'center 35%' }
       },
       {
          name: 'DS Sir',
@@ -50,7 +54,8 @@ const Faculty = () => {
          experience: '21 Years',
          specialization: 'Physical & Inorganic',
          achievements: ['Problem Solving Wizard', 'Result Oriented'],
-         image: '/images/ppl4.png'
+         image: '/images/ppl4.png',
+         bio: 'DS Sir (Dheerendra Srivastava), a veteran educator with over 20 years of experience at top institutes like Resonance and Bansal Classes, offers comprehensive chemistry batches focused on numerical mastery and conceptual clarity.'
       },
       {
          name: 'Satish Gurjar',
@@ -59,7 +64,8 @@ const Faculty = () => {
          experience: '10 Years',
          specialization: 'Physical & Inorganic',
          achievements: ['Problem Solving Wizard', 'Result Oriented'],
-         image: '/images/sp-2.png'
+         image: '/images/sp-2.png',
+         bio: 'A versatile senior faculty member with a decade of experience. Dedicated to providing comprehensive guidance and fostering a strong foundation in science for aspiring students.'
       }
    ];
 
@@ -113,33 +119,46 @@ const Faculty = () => {
                   <div className="w-20 h-1 bg-[#19a951] mx-auto"></div>
                </div>
 
-               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {faculty.map((teacher, index) => (
-                     <div key={index} className="bg-white shadow-md hover:shadow-2xl transition-all duration-300 group rounded-xl overflow-hidden border border-gray-100 flex flex-col items-center text-center">
-                        <div className="w-full aspect-[4/5] overflow-hidden bg-gray-100 relative">
-                           <div className="absolute inset-0 bg-gradient-to-t from-[#0b3259]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
-                              <p className="text-white font-bold">{teacher.specialization}</p>
-                           </div>
+                     <div key={index} className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                        <div className="relative h-80 overflow-hidden bg-gray-100">
+                           <div className="absolute inset-0 bg-gradient-to-t from-[#0b3259] via-transparent to-transparent opacity-60 z-10"></div>
                            <img
                               src={teacher.image}
                               alt={teacher.name}
                               className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                              style={teacher.imageStyle}
                            />
-                        </div>
-
-                        <div className="p-5 w-full bg-white relative">
-                           <div className="absolute -top-6 left-0 right-0 flex justify-center">
-                              <Badge className="bg-[#19a951] hover:bg-[#158f43] text-black border-none shadow-md">
+                           <div className="absolute bottom-4 left-4 z-20">
+                              <Badge className="bg-[#19a951] text-black border-none font-bold mb-1">
                                  {teacher.subject}
                               </Badge>
+                              <h3 className="text-2xl font-bold text-white shadow-black drop-shadow-md">{teacher.name}</h3>
+                           </div>
+                        </div>
+
+                        <div className="p-6 flex flex-col flex-grow">
+                           <div className="flex items-center gap-2 mb-4 text-sm text-gray-500 font-medium">
+                              <GraduationCap className="w-4 h-4 text-[#0b3259]" />
+                              <span>{teacher.qualification}</span>
+                              <span className="mx-1">•</span>
+                              <Star className="w-4 h-4 text-[#19a951]" />
+                              <span>{teacher.experience} Exp.</span>
                            </div>
 
-                           <h3 className="text-xl font-bold text-[#0b3259] mt-3 mb-1">{teacher.name}</h3>
-                           <p className="text-sm text-gray-500 font-semibold mb-3">{teacher.qualification}</p>
+                           <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                              {teacher.bio}
+                           </p>
 
-                           <div className="border-t border-gray-100 pt-3 flex justify-center items-center gap-2 text-sm text-gray-600">
-                              <Star className="w-4 h-4 text-[#19a951] fill-current" />
-                              <span className="font-bold">{teacher.experience} Exp</span>
+                           <div className="pt-4 border-t border-gray-100">
+                              <div className="flex flex-wrap gap-2">
+                                 {teacher.achievements.map((achievement, i) => (
+                                    <span key={i} className="text-xs font-bold text-[#0b3259] bg-blue-50 px-2 py-1 rounded">
+                                       {achievement}
+                                    </span>
+                                 ))}
+                              </div>
                            </div>
                         </div>
                      </div>

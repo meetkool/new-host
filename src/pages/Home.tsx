@@ -346,7 +346,7 @@ const Home = () => {
     <div className="min-h-screen bg-white font-sans pt-16">
 
       {/* SECTION 1: TOP BANNER (Yellow) */}
-      <div className="bg-[#19a951] py-6 px-4 text-center relative overflow-hidden">
+      <div className="bg-[#19a951] py-10 px-4 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-wide mb-3">
             {BRANDING.name} - {BRANDING.stats.yearsOfExperience} YEARS OF EXCELLENCE

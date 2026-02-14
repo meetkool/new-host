@@ -235,6 +235,71 @@ const AboutUs = () => {
                 technology-driven learning solutions.
               </p>
             </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
+              Meet Our <span className="text-[#0b3259]">Leadership</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">
+              The visionaries driving excellence in education
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Founder */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+              <img
+                src="/founder.jpeg"
+                alt="Satish Nagar"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold text-[#0b3259] mb-1">Satish Nagar</h3>
+                <p className="text-[#19a951] font-bold uppercase text-xs tracking-wider mb-3">Founder & Teacher</p>
+                <p className="text-gray-600 text-sm italic">
+                  "Education is the most powerful weapon which you can use to change the world."
+                </p>
+              </div>
+            </div>
+
+            {/* Co-Founder */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+              <img
+                src="/Co-Founder, Prayozan.jpeg"
+                alt="Gopesh Jadon"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold text-[#0b3259] mb-1">Gopesh Jadon</h3>
+                <p className="text-[#19a951] font-bold uppercase text-xs tracking-wider mb-3">Co-Founder</p>
+                <p className="text-gray-600 text-sm italic">
+                  "Building a legacy of excellence through dedication and innovation."
+                </p>
+              </div>
+            </div>
+
+            {/* Advisor */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+              <img
+                src="/Shivam DixitAdvisor.jpeg"
+                alt="Shivam Dixit"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold text-[#0b3259] mb-1">Shivam Dixit</h3>
+                <p className="text-[#19a951] font-bold uppercase text-xs tracking-wider mb-3">Business Advisor</p>
+                <p className="text-gray-600 text-sm italic">
+                  "Strategic guidance to scale new heights in educational excellence."
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
